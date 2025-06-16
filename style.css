@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cinzel', serif;
+    background-image: url(img/bg.jpg);
+    color: #fff;
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-top: 40px;
+    text-shadow: 0 0 2px #fff;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.login-box {
+    background: transparent;
+    padding: 20px;
+    width: 300px;
+}
+
+.subtitle {
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 1px #fff;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    background-color: #183840;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.input-group .icon {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.input-group input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.forgot,
+.signup {
+    display: block;
+    font-size: 0.75rem;
+    color: white;
+    margin-top: 5px;
+    text-decoration: none;
+}
