@@ -99,16 +99,16 @@ body {
 
 .livro img,
 .vazio {
-    width: 230px;
-    height: 300px;
-    background-color: white;
-    border: 2px solid #ccc;
-    box-shadow: 0 0 8px #00000055;
+    width: 240px;
+    height: 330px;
+    border: 2px solid #a3a3a3;
+    box-shadow: 0 0 15px #00000055;
     border-radius: 12px;
 }
 
 .vazio {
-    background-color: #bcbcbc;
+    background-image: url(img/nulo.png);
+    background-size: cover;
 }
 
 button {
