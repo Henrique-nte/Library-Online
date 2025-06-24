@@ -94,8 +94,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    transition: transform 0.3s ease;
 }
+
+.livro:hover {
+    transform: scale(1.1);
+}
+
 
 .livro img,
 .vazio {
@@ -127,13 +132,13 @@ button {
 }
 
 .btn-reservar {
-    background-color: #444;
+    background-color: #022E41;
     color: white;
 }
 
 .btn-ler:hover,
 .btn-reservar:hover {
-    background-color: #888;
+    background-color: #034663;
 }
 
 .vermais {
