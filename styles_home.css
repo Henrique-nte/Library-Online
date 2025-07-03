@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Cinzel', serif;
     background-image: url(img/bg.jpg);
@@ -68,8 +72,8 @@ body {
 }
 
 .titulo-home {
-    font-size: 50px;
-    margin-bottom: 30px;
+    font-size: 60px;
+    margin-bottom: 50px;
     letter-spacing: 3px;
 }
 
@@ -78,9 +82,10 @@ body {
 }
 
 .sessao h2 {
-    font-size: 20px;
+    font-size: 40px;
     letter-spacing: 2px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 .grade {
@@ -88,6 +93,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 55px;
+    
 }
 
 .livro {
