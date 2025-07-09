@@ -35,12 +35,12 @@
             <div class="grade-reservados">
                 <div class="livro">
                     <img src="img/os misera.jpg" alt="Livro 1">
-                    <button class="btn-ler">Devolução: 24/06/2025</button>
+                    <button class="btn-ler">Reservado</button>
                     <button class="btn-devolver">Devolver</button>
                 </div>
                 <div class="livro">
                     <img src="img/dom.jpg" alt="Livro 2">
-                    <button class="btn-ler">Devolução: 18/07/2025</button>
+                    <button class="btn-ler">Reservado</button>
                     <button class="btn-devolver">Devolver</button>
                 </div>
 
@@ -107,7 +107,8 @@
 </body>
 
 <script>
-    const bts = document.querySelectorAll('.btn-ler');
+    const bts = document.querySelectorAll('.btn-devolver');
+    const bot = document.querySelectorAll('.')
 
     bts.forEach(function (botao) {
         botao.addEventListener("click", function () {
@@ -118,10 +119,13 @@
 
                 //Adicionar a lógica para adiconar um campo de livro NULL
 
+
                 // Espera um pouquinho para o botão atualizar
                 setTimeout(function () {
                     const destino = document.querySelector('.grade-reservados');
                     destino.appendChild(livro); // move o elemento
+                    //Adicionar Lógica de colocar botao de devolver quando o elemento for movido
+
                 }, 300);
             }
         });
@@ -144,7 +148,6 @@
 
                 // Sobe até o .livro
                 const livro = botao.closest('.livro');
-
                 // Dentro de .livro, procura o botão .btn-ler
                 const btnLer = livro.querySelector('.btn-ler');
 
