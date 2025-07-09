@@ -81,3 +81,5 @@ botoes.forEach(function (botao) {
 });
 
 
+//Lógica da página de Autores
+
