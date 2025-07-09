@@ -52,33 +52,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
 
 
-//js do botao reservar
 
-
-// 1. Pega todos os botões
-const botoes = document.querySelectorAll('.btn-ler');
-
-// 2. Para cada botão:
-botoes.forEach(function (botao) {
-    botao.addEventListener("click", function () {
-
-        //  Verifica se o botão está com texto "Reservar"
-        if (botao.textContent === "Reservar") {
-            botao.textContent = "Reservado";
-
-            setTimeout(function () {
-                //Encontra o elemento pai do botão que tem a classe "livro"
-                const livro = botao.closest('.livro');
-
-                // Some com o livro da tela
-                if (livro) {
-                    livro.style.display = "none";
-                }
-
-            }, 600); //espera 0.6 segundos
-        }
-    });
-});
 
 
 //Lógica da página de Autores

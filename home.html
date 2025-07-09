@@ -9,7 +9,6 @@
     <link rel="icon" href="img/iconi.png" type="image/png">
     <title>Home</title>
 
-
 </head>
 
 <body>
@@ -33,7 +32,7 @@
 
         <section class="sessao">
             <h2>RESERVADOS</h2>
-            <div class="grade">
+            <div class="grade-reservados">
                 <div class="livro">
                     <img src="img/os misera.jpg" alt="Livro 1">
                     <button class="btn-ler">Devolução: 24/06/2025</button>
@@ -43,6 +42,33 @@
                     <img src="img/dom.jpg" alt="Livro 2">
                     <button class="btn-ler">Devolução: 18/07/2025</button>
                     <button class="btn-devolver">Devolver</button>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="destaques" class="sessao">
+            <h2>DESTAQUES</h2>
+            <div class="grade">
+                <div class="livro">
+                    <img src="img/os misera.jpg" alt="Livro 1">
+                    <button class="btn-ler">Reservar</button>
+                </div>
+                <div class="livro">
+                    <img src="img/dom.jpg" alt="Livro 2">
+                    <button class="btn-ler">Reservar</button>
+                </div>
+                <div class="livro">
+                    <div class="vazio"></div>
+                    <button class="btn-ler">Reservar</button>
+                </div>
+                <div class="livro">
+                    <img src="img/crime.jpg" alt="Livro 3">
+                    <button class="btn-ler">Reservar</button>
+                </div>
+                <div class="livro">
+                    <img src="img/irmaos.jpg" alt="Livro 3">
+                    <button class="btn-ler">Reservar</button>
                 </div>
 
             </div>
@@ -79,6 +105,29 @@
     </main>
 
 </body>
+
+<script>
+    const bts = document.querySelectorAll('.btn-ler');
+
+    bts.forEach(function (botao) {
+        botao.addEventListener("click", function () {
+            if (botao.textContent === "Reservar") {
+                botao.textContent = "Reservado";
+
+                const livro = botao.closest('.livro');
+
+                //Adicionar a lógica para adiconar um campo de livro NULL
+
+                // Espera um pouquinho para o botão atualizar
+                setTimeout(function () {
+                    const destino = document.querySelector('.grade-reservados');
+                    destino.appendChild(livro); // move o elemento
+                }, 300);
+            }
+        });
+    });
+
+</script>
 
 <script>
 

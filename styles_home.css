@@ -131,6 +131,13 @@ body {
 
 }
 
+.grade-reservados {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 55px;
+}
+
 .livro {
     display: flex;
     flex-direction: column;
