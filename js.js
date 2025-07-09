@@ -52,10 +52,6 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
 
 
-
-
-
-
 //js do botao reservar
 
 
@@ -83,18 +79,5 @@ botoes.forEach(function (botao) {
         }
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

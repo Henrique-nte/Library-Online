@@ -37,22 +37,12 @@
                 <div class="livro">
                     <img src="img/os misera.jpg" alt="Livro 1">
                     <button class="btn-ler">Devolução: 24/06/2025</button>
+                    <button class="btn-devolver">Devolver</button>
                 </div>
                 <div class="livro">
                     <img src="img/dom.jpg" alt="Livro 2">
                     <button class="btn-ler">Devolução: 18/07/2025</button>
-                </div>
-                <div class="livro">
-                    <div class="vazio"></div>
-                    <button class="btn-ler">Devolução: 21/08/2025</button>
-                </div>
-                <div class="livro">
-                    <img src="img/crime.jpg" alt="Livro 3">
-                    <button class="btn-ler">Devolução: 15/09/2025</button>
-                </div>
-                <div class="livro">
-                    <img src="img/irmaos.jpg" alt="Livro 3">
-                    <button class="btn-ler">Devolução: 23/10/2025</button>
+                    <button class="btn-devolver">Devolver</button>
                 </div>
 
             </div>
@@ -61,5 +51,41 @@
     </main>
 
 </body>
+
+<script>
+
+    // js do botao devolver
+
+    const botoes = document.querySelectorAll('.btn-devolver')
+
+    botoes.forEach(function (botao) {
+        botao.addEventListener("click", function () {
+
+            if (botao.textContent === "Devolver") {
+                botao.textContent = "Devolvido";
+
+
+                // Sobe até o .livro
+                const livro = botao.closest('.livro');
+
+                // Dentro de .livro, procura o botão .btn-ler
+                const btnLer = livro.querySelector('.btn-ler');
+
+                if (btnLer) {
+                    btnLer.style.display = "none";
+
+                }
+                setTimeout(function () {
+                    if (btnLer) {
+                        livro.style.display = "none";
+                    }
+                }, 800)
+            }
+
+        });
+    });
+
+
+</script>
 
 </html>

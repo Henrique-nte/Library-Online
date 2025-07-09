@@ -168,8 +168,12 @@ button {
 }
 
 .btn-ler {
-    background-color: #005c75;
-    color: white;
+    background-color: none;
+}
+
+.btn-devolver {
+    background-color: #05597d;
+
 }
 
 .btn-reservar {
@@ -178,6 +182,4 @@ button {
 }
 
 .btn-ler:hover,
-.btn-reservar:hover {
-    background-color: #034663;
-}
+.btn-reservar:hover {}
