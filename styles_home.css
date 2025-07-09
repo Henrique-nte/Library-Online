@@ -65,7 +65,7 @@ body {
 
 
 
-
+/*
 #preloader {
     position: fixed;
     top: 0;
@@ -73,7 +73,7 @@ body {
     width: 100%;
     height: 100%;
     background: #000;
-    /* ou cor da sua identidade visual */
+     ou cor da sua identidade visual 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -98,6 +98,7 @@ body {
         transform: rotate(360deg);
     }
 }
+*/
 
 
 
