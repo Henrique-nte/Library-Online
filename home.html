@@ -21,7 +21,7 @@
         <a href="#" class="navbar-brand">Library Online</a>
         <ul class="navbar-nav">
             <li class="nav-item"><a href="home.html" class="nav-link">HOME</a></li>
-            <li class="nav-item"><a href="destaques.html" class="nav-link">DESTAQUES</a></li>
+            <li class="nav-item"><a href="#destaques" class="nav-link">DESTAQUES</a></li>
             <li class="nav-item"><a href="#autores" class="nav-link">AUTORES</a></li>
             <li class="nav-item"><a href="/index.html" class="nav-link">SAIR</a></li>
         </ul>
@@ -107,8 +107,8 @@
 </body>
 
 <script>
-    const bts = document.querySelectorAll('.btn-devolver');
-    const bot = document.querySelectorAll('.')
+    const btn = document.querySelector('.btn-devolver');
+    const bts = document.querySelectorAll('.btn-ler');
 
     bts.forEach(function (botao) {
         botao.addEventListener("click", function () {
@@ -119,14 +119,16 @@
 
                 //Adicionar a lógica para adiconar um campo de livro NULL
 
-
                 // Espera um pouquinho para o botão atualizar
                 setTimeout(function () {
                     const destino = document.querySelector('.grade-reservados');
                     destino.appendChild(livro); // move o elemento
+
                     //Adicionar Lógica de colocar botao de devolver quando o elemento for movido
 
                 }, 300);
+
+
             }
         });
     });
