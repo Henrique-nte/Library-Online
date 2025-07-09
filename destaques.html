@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>destaques</title>
+</head>
+
+<style>
+    .navbar {
+        background-color: #022E41;
+        overflow: hidden;
+        /* Permite que o conteúdo flutue dentro da navbar */
+    }
+
+    .navbar-brand {
+        float: left;
+        /* Alinha o logo à esquerda */
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 33px 34px;
+        text-decoration: none;
+        font-size: 25px;
+    }
+
+    .navbar-nav {
+        float: right;
+        /* Alinha os links à direita */
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-item {
+        float: left;
+        font-size: 25px;
+    }
+
+    .nav-link {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 33px 34px;
+        text-decoration: none;
+    }
+
+    .nav-link:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+
+    .sessao {
+        margin-bottom: 50px;
+    }
+
+    .sessao h2 {
+        font-size: 40px;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+
+    .grade {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 55px;
+
+    }
+
+    .livro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.3s ease;
+    }
+
+    .livro:hover {
+        transform: scale(1.1);
+    }
+
+
+    .livro img,
+    .vazio {
+        width: 240px;
+        height: 330px;
+        border: 2px solid #a3a3a3;
+        box-shadow: 0 0 15px #00000055;
+        border-radius: 12px;
+    }
+
+    .vazio {
+        background-image: url(img/nulo.png);
+        background-size: cover;
+    }
+
+    button {
+        margin-top: 8px;
+        padding: 5px 12px;
+        font-size: 0.9rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: 'Cinzel', serif;
+    }
+
+    .btn-ler {
+        background-color: #005c75;
+        color: white;
+    }
+
+    .btn-reservar {
+        background-color: #022E41;
+        color: white;
+    }
+
+    .btn-ler:hover,
+    .btn-reservar:hover {
+        background-color: #034663;
+    }
+</style>
+
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="navbar-brand">Library Online</a>
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="home.html" class="nav-link">HOME</a></li>
+            <li class="nav-item"><a href="destaques.html" class="nav-link">DESTAQUES</a></li>
+            <li class="nav-item"><a href="#autores" class="nav-link">AUTORES</a></li>
+            <li class="nav-item"><a href="/index.html" class="nav-link">SAIR</a></li>
+        </ul>
+    </nav>
+
+
+
+    <section id="destaques" class="sessao">
+        <h2>DESTAQUES</h2>
+        <div class="grade">
+            <div class="livro">
+                <img src="img/os misera.jpg" alt="Livro 1">
+                <button class="btn-ler">Reservar</button>
+            </div>
+            <div class="livro">
+                <img src="img/dom.jpg" alt="Livro 2">
+                <button class="btn-ler">Reservar</button>
+            </div>
+            <div class="livro">
+                <div class="vazio"></div>
+                <button class="btn-ler">Reservar</button>
+            </div>
+            <div class="livro">
+                <img src="img/crime.jpg" alt="Livro 3">
+                <button class="btn-ler">Reservar</button>
+            </div>
+            <div class="livro">
+                <img src="img/irmaos.jpg" alt="Livro 3">
+                <button class="btn-ler">Reservar</button>
+            </div>
+
+        </div>
+    </section>
+
+
+
+</body>
+
+</html>
