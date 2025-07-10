@@ -115,14 +115,26 @@
             if (botao.textContent === "Reservar") {
                 botao.textContent = "Reservado";
 
+                //O .closest() olha pra cima
                 const livro = botao.closest('.livro');
+
+    
 
                 //Adicionar a lógica para adiconar um campo de livro NULL
 
                 // Espera um pouquinho para o botão atualizar
                 setTimeout(function () {
+                    
                     const destino = document.querySelector('.grade-reservados');
                     destino.appendChild(livro); // move o elemento
+
+                    //Cria e adiciona o botão devolver
+                    const botaoDevolver = document.createElement("button");
+                    botaoDevolver.textContent = "Devolver";
+                    botaoDevolver.classList.add("btn-devolver");
+
+                    //Adiciono no livro o botao devolver
+                    livro.appendChild(botaoDevolver)
 
                     //Adicionar Lógica de colocar botao de devolver quando o elemento for movido
 
@@ -137,36 +149,35 @@
 
 <script>
 
-    // js do botao devolver
+    document.addEventListener("click", function(event){
 
-    const botoes = document.querySelectorAll('.btn-devolver')
+        const botao = event.target; // Elemento exato que foi clicado
 
-    botoes.forEach(function (botao) {
-        botao.addEventListener("click", function () {
+        if (botao.classList.contains("btn-devolver")){
 
-            if (botao.textContent === "Devolver") {
+            if (botao.textContent === "Devolver"){
+
+                //altero o texto do botão
                 botao.textContent = "Devolvido";
 
-
-                // Sobe até o .livro
+                //Subo e pego o container livro
                 const livro = botao.closest('.livro');
-                // Dentro de .livro, procura o botão .btn-ler
+
+                //Busco o botão "Reservado" dentro de livro
                 const btnLer = livro.querySelector('.btn-ler');
 
-                if (btnLer) {
+                if (btnLer){
                     btnLer.style.display = "none";
-
                 }
-                setTimeout(function () {
-                    if (btnLer) {
+
+                setTimeout(function(){
+                    if (btnLer){
                         livro.style.display = "none";
                     }
-                }, 800)
+                }, 800);
             }
-
-        });
+        }
     });
-
 
 </script>
 
