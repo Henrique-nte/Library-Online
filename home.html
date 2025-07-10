@@ -9,8 +9,6 @@
     <link rel="icon" href="img/iconi.png" type="image/png">
     <title>Home</title>
 
-    
-
 </head>
 
 <body>
@@ -24,7 +22,7 @@
         <ul class="navbar-nav">
             <li class="nav-item"><a href="home.html" class="nav-link">HOME</a></li>
             <li class="nav-item"><a href="#destaques" class="nav-link">DESTAQUES</a></li>
-            <li class="nav-item"><a href="#autores" class="nav-link">AUTORES</a></li>
+            <li class="nav-item"><a href="autores.html" class="nav-link">AUTORES</a></li>
             <li class="nav-item"><a href="/index.html" class="nav-link">SAIR</a></li>
         </ul>
     </nav>
@@ -74,60 +72,9 @@
         </section>
 
 
-        <section id="autores" class="sessao">
-            <h2>AUTORES</h2>
-            <div class="grade">
-                <div class="livro">
-                    <img src="img/machado.jpeg" alt="Livro 1">
-                    <a  href = "#" class="btn-ler" data-autor="Machado de Assis">Machado de Assis</a>
-                </div>
-                <div class="livro">
-                    <img src="img/Clarice.jpg" alt="Livro 2">
-                    <a  href = "#" class="btn-ler" data-autor="Clarice Lispector">Clarice Lispector</a>
-                </div>
-                <div class="livro">
-                    <img src="img/Carlos.jpg" alt="Livro 2">
-                    <a  href = "#" class="btn-ler" data-autor="Carlos Drummond de Andrade">Carlos Drummond de Andrade</a>
-                </div>
-                <div class="livro">
-                    <img src="img/Fernando Pessoa.jpg" alt="Livro 3">
-                    <a href = "#" class="btn-ler" data-autor="Fernando Pessoa">Fernando Pessoa</a>
-                </div>
-                <div class="livro">
-                    <img src="img/Guimaraes.jpg" alt="Livro 3">
-                    
-                    <a href="#" class="btn-ler" data-autor="João Guimarães Rosa">Guimarães Rosa</a>
-
-                </div>
-
-            </div>
-        </section>
-
-    </main>
-
-</body>
-
+        
 
 <script>
-    document.querySelectorAll('.btn-ler').forEach(botao => {
-    botao.addEventListener("click", function (e) {
-        e.preventDefault();
-        const nome = botao.dataset.autor;
-        window.location.href = `autores.html?nome=${encodeURIComponent(nome)}`;
-    });
-});
-</script>
-
-<script>
-
-    document.addEventListener("click", function(event){
-        const botao  = event.target;
-
-        if (botao.classList.contains("vazio")){
-
-        }
-    });
-
 
 
     const bts = document.querySelectorAll('.btn-ler');
@@ -164,7 +111,6 @@
 
                 }, 800);
 
-            
             }
         });
     });

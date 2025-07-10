@@ -1,212 +1,266 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil do Autor</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="js.js" defer></script> <!-- Carrega js.js depois do HTML -->
-
-    <!-- Seus estilos mantidos -->
-    <style>
-        .navbar {
-        background-color: #022E41;
-        overflow: hidden;
-        /* Permite que o conteúdo flutue dentro da navbar */
-    }
-
-    .navbar-brand {
-        float: left;
-        /* Alinha o logo à esquerda */
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 33px 34px;
-        text-decoration: none;
-        font-size: 25px;
-    }
-
-    .navbar-nav {
-        float: right;
-        /* Alinha os links à direita */
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .nav-item {
-        float: left;
-        font-size: 25px;
-    }
-
-    .nav-link {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 33px 34px;
-        text-decoration: none;
-    }
-
-    .nav-link:hover {
-        background-color: #ddd;
-        color: black;
-    }
-
-
-    .sessao {
-        margin-bottom: 50px;
-    }
-
-    .sessao h2 {
-        font-size: 40px;
-        letter-spacing: 2px;
-        margin-bottom: 30px;
-        margin-top: 30px;
-    }
-
-    .grade {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 55px;
-
-    }
-
-    .livro {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        transition: transform 0.3s ease;
-    }
-
-    .livro:hover {
-        transform: scale(1.1);
-    }
-
-
-    .livro img,
-    .vazio {
-        width: 240px;
-        height: 330px;
-        border: 2px solid #a3a3a3;
-        box-shadow: 0 0 15px #00000055;
-        border-radius: 12px;
-    }
-
-    .vazio {
-        background-image: url(img/nulo.png);
-        background-size: cover;
-    }
-
-    button {
-        margin-top: 8px;
-        padding: 5px 12px;
-        font-size: 0.9rem;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-family: 'Cinzel', serif;
-    }
-
-    .btn-ler {
-        background-color: #005c75;
-        color: white;
-    }
-
-    .btn-reservar {
-        background-color: #022E41;
-        color: white;
-    }
-
-    .btn-ler:hover,
-    .btn-reservar:hover {
-        background-color: #034663;
-    }
-    </style>
-
-
-    <style>
-        .autor-container {
-            max-width: 900px;
-            margin: 60px auto;
-            display: flex;
-            gap: 30px;
-            background-color: #022E41;
-            border-radius: 12px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-        }
-
-        .autor-container img {
-            width: 300px;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 10px;
-            border: 2px solid #ccc;
-        }
-
-        .autor-info {
-            flex: 1;
-        }
-
-        .autor-nome {
-            font-size: 32px;
-            color: #ffffff;
-            margin-bottom: 10px;
-        }
-
-        .autor-nacionalidade {
-            font-size: 18px;
-            color: #ffffff;
-            margin-bottom: 20px;
-        }
-
-        .autor-bio {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #ffffff;
-        }
-
-        @media (max-width: 768px) {
-            .autor-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .autor-container img {
-                width: 90%;
-                height: auto;
-            }
-
-            .autor-info {
-                text-align: center;
-            }
-        }
-    </style>
+    <title>Autores</title>
 </head>
 
-<body>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@800&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cinzel', serif;
+    background-image: url(img/bg.jpg);
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+}
+
+.navbar {
+    background-color: #022E41;
+    overflow: hidden;
+    /* Permite que o conteúdo flutue dentro da navbar */
+}
+
+.navbar-brand {
+    float: left;
+    /* Alinha o logo à esquerda */
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 33px 34px;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.navbar-nav {
+    float: right;
+    /* Alinha os links à direita */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    float: left;
+    font-size: 25px;
+}
+
+.nav-link {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 33px 34px;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+
+
+
+/*
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+     ou cor da sua identidade visual 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.loader {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: girar 1s linear infinite;
+}
+
+@keyframes girar {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+*/
+
+
+
+.conteudo {
+    padding: 10px 20px;
+}
+
+.titulo-home {
+    font-size: 60px;
+    margin-bottom: 50px;
+    letter-spacing: 3px;
+}
+
+.sessao {
+    margin-bottom: 50px;
+}
+
+.sessao h2 {
+    font-size: 40px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.grade {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 55px;
+
+}
+
+.grade-reservados {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 55px;
+}
+
+.livro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.livro:hover {
+    transform: scale(1.1);
+}
+
+
+.livro img,
+.vazio {
+    width: 240px;
+    height: 330px;
+    border: 2px solid #a3a3a3;
+    box-shadow: 0 0 15px #00000055;
+    border-radius: 12px;
+}
+
+.vazio {
+    background-image: url(img/nulo.png);
+    background-size: cover;
+}
+
+button, a {
+    margin-top: 8px;
+    padding: 5px 12px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    text-decoration: none;
+}
+
+.btn-ler {
+    background-color: none;
+}
+
+.btn-devolver {
+    background-color: #05597d;
+
+}
+
+.btn-reservar {
+    background-color: #022E41;
+    color: white;
+}
+
+.btn-ler:hover,
+.btn-reservar:hover {}
+
+</style>
+
+<body>
+    
     <nav class="navbar">
         <a href="#" class="navbar-brand">Library Online</a>
         <ul class="navbar-nav">
             <li class="nav-item"><a href="home.html" class="nav-link">HOME</a></li>
             <li class="nav-item"><a href="home.html" class="nav-link">DESTAQUES</a></li>
-            <li class="nav-item"><a href="#autores" class="nav-link">AUTORES</a></li>
+            <li class="nav-item"><a href="autores.html" class="nav-link">AUTORES</a></li>
             <li class="nav-item"><a href="/index.html" class="nav-link">SAIR</a></li>
         </ul>
     </nav>
 
-    <div class="autor-container">
-        <img id="autor-imagem" src="" alt="Imagem do autor">
-        <div class="autor-info">
-            <h1 class="autor-nome" id="autor-nome"></h1>
-            <p class="autor-nacionalidade" id="autor-nacionalidade"></p>
-            <p class="autor-bio" id="autor-resumo"></p>
+
+    <section id="autores" class="sessao">
+        <h2>AUTORES</h2>
+        <div class="grade">
+            <div class="livro">
+                <img src="img/machado.jpeg" alt="Livro 1">
+                <a  href = "#" class="btn-ler" data-autor="Machado de Assis">Machado de Assis</a>
+            </div>
+            <div class="livro">
+                <img src="img/Clarice.jpg" alt="Livro 2">
+                <a  href = "#" class="btn-ler" data-autor="Clarice Lispector">Clarice Lispector</a>
+            </div>
+            <div class="livro">
+                <img src="img/Carlos.jpg" alt="Livro 2">
+                <a  href = "#" class="btn-ler" data-autor="Carlos Drummond de Andrade">Carlos Drummond de Andrade</a>
+            </div>
+            <div class="livro">
+                <img src="img/Fernando Pessoa.jpg" alt="Livro 3">
+                <a href = "#" class="btn-ler" data-autor="Fernando Pessoa">Fernando Pessoa</a>
+            </div>
+            <div class="livro">
+                <img src="img/Guimaraes.jpg" alt="Livro 3">
+                
+                <a href="#" class="btn-ler" data-autor="João Guimarães Rosa">Guimarães Rosa</a>
+
+            </div>
+
         </div>
-    </div>
+    </section>
+
+</main>
 
 </body>
 
+<script>
+
+//Redirecionamento do a 
+document.querySelectorAll('.btn-ler').forEach(botao => {
+botao.addEventListener("click", function (e) {
+    e.preventDefault();
+    const nome = botao.dataset.autor;
+    window.location.href = `autor.html?nome=${encodeURIComponent(nome)}`;
+});
+});
+
+</script>
+
+</body>
 </html>
