@@ -58,10 +58,7 @@
                     <img src="img/dom.jpg" alt="Livro 2">
                     <button class="btn-ler">Reservar</button>
                 </div>
-                <div class="livro">
-                    <div class="vazio"></div>
-                    <button class="btn-ler">Reservar</button>
-                </div>
+                
                 <div class="livro">
                     <img src="img/crime.jpg" alt="Livro 3">
                     <button class="btn-ler">Reservar</button>
@@ -107,7 +104,17 @@
 </body>
 
 <script>
-    const btn = document.querySelector('.btn-devolver');
+
+    document.addEventListener("click", function(event){
+        const botao  = event.target;
+
+        if (botao.classList.contains("vazio")){
+
+        }
+    });
+
+
+
     const bts = document.querySelectorAll('.btn-ler');
 
     bts.forEach(function (botao) {
@@ -117,10 +124,6 @@
 
                 //O .closest() olha pra cima
                 const livro = botao.closest('.livro');
-
-    
-
-                //Adicionar a lógica para adiconar um campo de livro NULL
 
                 // Espera um pouquinho para o botão atualizar
                 setTimeout(function () {
@@ -136,11 +139,17 @@
                     //Adiciono no livro o botao devolver
                     livro.appendChild(botaoDevolver)
 
-                    //Adicionar Lógica de colocar botao de devolver quando o elemento for movido
+                    
+                    //Adicionar a lógica para adiconar um campo de livro NULL
+                    const vazio = document.createElement("div");
+                    vazio.classList.add("vazio")
+                    
+                    const grade = document.querySelector('.grade')
+                    grade.appendChild(vazio);
 
-                }, 300);
+                }, 800);
 
-
+            
             }
         });
     });
