@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil do Autor</title>
     <link rel="stylesheet" href="style.css">
+    <script src="js.js" defer></script> <!-- Carrega js.js depois do HTML -->
 
+    <!-- Seus estilos mantidos -->
     <style>
         .navbar {
         background-color: #022E41;
@@ -190,22 +192,18 @@
         <a href="#" class="navbar-brand">Library Online</a>
         <ul class="navbar-nav">
             <li class="nav-item"><a href="home.html" class="nav-link">HOME</a></li>
-            <li class="nav-item"><a href="destaques.html" class="nav-link">DESTAQUES</a></li>
+            <li class="nav-item"><a href="home.html" class="nav-link">DESTAQUES</a></li>
             <li class="nav-item"><a href="#autores" class="nav-link">AUTORES</a></li>
             <li class="nav-item"><a href="/index.html" class="nav-link">SAIR</a></li>
         </ul>
     </nav>
 
     <div class="autor-container">
-        <img src="img/machado.jpeg" alt="Machado de Assis">
+        <img id="autor-imagem" src="" alt="Imagem do autor">
         <div class="autor-info">
-            <h1 class="autor-nome">Machado de Assis</h1>
-            <p class="autor-nacionalidade">🇧🇷 Brasileiro</p>
-            <p class="autor-bio">
-                Joaquim Maria Machado de Assis foi um dos maiores escritores da literatura brasileira,
-                fundador da Academia Brasileira de Letras. Seus romances, como "Dom Casmurro" e "Memórias Póstumas de Brás Cubas",
-                marcaram a transição entre o romantismo e o realismo, explorando temas como a hipocrisia social, a ambiguidade humana e a crítica sutil à elite do século XIX.
-            </p>
+            <h1 class="autor-nome" id="autor-nome"></h1>
+            <p class="autor-nacionalidade" id="autor-nacionalidade"></p>
+            <p class="autor-bio" id="autor-resumo"></p>
         </div>
     </div>
 

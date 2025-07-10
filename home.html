@@ -9,6 +9,8 @@
     <link rel="icon" href="img/iconi.png" type="image/png">
     <title>Home</title>
 
+    
+
 </head>
 
 <body>
@@ -77,23 +79,25 @@
             <div class="grade">
                 <div class="livro">
                     <img src="img/machado.jpeg" alt="Livro 1">
-                    <button class="btn-ler" name="Machado">Machado de Assis</button>
+                    <a  href = "#" class="btn-ler" data-autor="Machado de Assis">Machado de Assis</a>
                 </div>
                 <div class="livro">
                     <img src="img/Clarice.jpg" alt="Livro 2">
-                    <button class="btn-ler" name="Clarice Lispector">Clarice Lispector</button>
+                    <a  href = "#" class="btn-ler" data-autor="Clarice Lispector">Clarice Lispector</a>
                 </div>
                 <div class="livro">
                     <img src="img/Carlos.jpg" alt="Livro 2">
-                    <button class="btn-ler" name="Carlos Drummond">Carlos Drummond de Andrade</button>
+                    <a  href = "#" class="btn-ler" data-autor="Carlos Drummond de Andrade">Carlos Drummond de Andrade</a>
                 </div>
                 <div class="livro">
                     <img src="img/Fernando Pessoa.jpg" alt="Livro 3">
-                    <button class="btn-ler" name="Fernando Pessoa">Fernando Pessoa</button>
+                    <a href = "#" class="btn-ler" data-autor="Fernando Pessoa">Fernando Pessoa</a>
                 </div>
                 <div class="livro">
                     <img src="img/Guimaraes.jpg" alt="Livro 3">
-                    <button class="btn-ler" name="Guimaraes">Guimarães Rosa</button>
+                    
+                    <a href="#" class="btn-ler" data-autor="João Guimarães Rosa">Guimarães Rosa</a>
+
                 </div>
 
             </div>
@@ -102,6 +106,17 @@
     </main>
 
 </body>
+
+
+<script>
+    document.querySelectorAll('.btn-ler').forEach(botao => {
+    botao.addEventListener("click", function (e) {
+        e.preventDefault();
+        const nome = botao.dataset.autor;
+        window.location.href = `autores.html?nome=${encodeURIComponent(nome)}`;
+    });
+});
+</script>
 
 <script>
 

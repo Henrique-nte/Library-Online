@@ -50,10 +50,74 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 //});
 
 
-
-
-
-
-
 //Lógica da página de Autores
 
+const autores = [
+    {
+        nome: "Machado de Assis",
+        nacionalidade: "Brasileira",
+        Imagem: "img/machado.jpeg",
+        resumo: "Joaquim Maria Machado De Assis foi um escritor brasileiro amplamente conhecido pelos suas obras: 'Memórias Póstumas de Brás Cubas', 'Dom casmurro'."
+    },
+    {
+        nome: "Clarice Lispector",
+        nacionalidade: "Brasileira",
+        Imagem: "img/Clarice.jpg",
+        resumo: "Conhecida por uma escrita introspectiva e existencial, explorou os sentimentos e a identidade com profundidade psicológica."
+    },
+    {
+        nome: "Carlos Drummond de Andrade",
+        nacionalidade: "Brasileira",
+        Imagem: "img/Carlos.jpg",
+        resumo: "Poeta modernista, abordou temas do cotidiano, da solidão e da condição humana com linguagem simples e reflexiva."
+    },
+    {
+        nome: "Fernando Pessoa",
+        nacionalidade: "Português",
+        Imagem: "img/Fernando Pessoa.jpg",
+        resumo: "Criou múltiplos heterônimos para expressar diferentes visões de mundo; é um dos maiores nomes da literatura portuguesa."
+    },
+    {
+        nome: "João Guimarães Rosa",
+        nacionalidade: "Brasileira",
+        Imagem: "img/Guimaraes.jpg",
+        resumo: "Revolucionou a linguagem literária com vocabulário regional e neologismos; retratou o sertão com profundidade filosófica."
+    }
+];
+
+
+// Espera o carregamento completo do HTML antes de executar o código
+document.addEventListener("DOMContentLoaded", function () {
+    
+    // Pega os parâmetros da URL (exemplo: autores.html?nome=Machado%20de%20Assis)
+    const params = new URLSearchParams(window.location.search);
+
+    // Capturo o "nome" da URL
+    const nome = params.get("nome");
+
+    // Procura no array 'autores' um objeto onde o nome seja exatamente igual ao nome da URL
+    const autor = autores.find(a => a.nome === nome);
+
+    // Se encontrou um autor correspondente:
+    if (autor) {
+        // Atualiza o nome do autor na página
+        document.getElementById("autor-nome").textContent = autor.nome;
+
+        // Atualiza a nacionalidade do autor na página, com emoji fixo de Brasil (ajustar isso se for autor estrangeiro)
+        document.getElementById("autor-nacionalidade").textContent = `🇧🇷 ${autor.nacionalidade}`;
+
+        // Atualiza o resumo/bio do autor na página
+        document.getElementById("autor-resumo").textContent = autor.resumo;
+
+        // Atualiza a imagem do autor na página
+        document.getElementById("autor-imagem").src = autor.Imagem;
+        document.getElementById("autor-imagem").alt = `Imagem de ${autor.nome}`;
+    } else {
+        // Se não encontrou, exibe mensagem de erro simples
+        document.body.innerHTML = "<h2>Autor não encontrado</h2>";
+    }
+});
+
+  
+
+  
