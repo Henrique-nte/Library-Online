@@ -65,7 +65,7 @@
                     <img src="img/dom.jpg" alt="Livro 2">
                     <button class="btn-ler">Reservar</button>
                 </div>
-                
+
                 <div class="livro">
                     <img src="img/crime.jpg" alt="Livro 3">
                     <button class="btn-ler">Reservar</button>
@@ -79,83 +79,83 @@
         </section>
 
 
-        
-
-<script>
 
 
-    const bts = document.querySelectorAll('.btn-ler');
+        <script>
 
-    bts.forEach(function (botao) {
-        botao.addEventListener("click", function () {
-            if (botao.textContent === "Reservar") {
-                botao.textContent = "Reservado";
 
-                //O .closest() olha pra cima
-                const livro = botao.closest('.livro');
+            const bts = document.querySelectorAll('.btn-ler');
 
-                // Espera um pouquinho para o botão atualizar
-                setTimeout(function () {
-                    
-                    const destino = document.querySelector('.grade-reservados');
-                    destino.appendChild(livro); // move o elemento
+            bts.forEach(function (botao) {
+                botao.addEventListener("click", function () {
+                    if (botao.textContent === "Reservar") {
+                        botao.textContent = "Reservado";
 
-                    //Cria e adiciona o botão devolver
-                    const botaoDevolver = document.createElement("button");
-                    botaoDevolver.textContent = "Devolver";
-                    botaoDevolver.classList.add("btn-devolver");
+                        //O .closest() olha pra cima
+                        const livro = botao.closest('.livro');
 
-                    //Adiciono no livro o botao devolver
-                    livro.appendChild(botaoDevolver)
+                        // Espera um pouquinho para o botão atualizar
+                        setTimeout(function () {
 
-                    
-                    //Adicionar a lógica para adiconar um campo de livro NULL
-                    const vazio = document.createElement("div");
-                    vazio.classList.add("vazio")
-                    
-                    const grade = document.querySelector('.grade')
-                    grade.appendChild(vazio);
+                            const destino = document.querySelector('.grade-reservados');
+                            destino.appendChild(livro); // move o elemento
 
-                }, 800);
+                            //Cria e adiciona o botão devolver
+                            const botaoDevolver = document.createElement("button");
+                            botaoDevolver.textContent = "Devolver";
+                            botaoDevolver.classList.add("btn-devolver");
 
-            }
-        });
-    });
+                            //Adiciono no livro o botao devolver
+                            livro.appendChild(botaoDevolver)
 
-</script>
 
-<script>
+                            //Adicionar a lógica para adiconar um campo de livro NULL
+                            const vazio = document.createElement("div");
+                            vazio.classList.add("vazio")
 
-    document.addEventListener("click", function(event){
+                            const grade = document.querySelector('.grade')
+                            grade.appendChild(vazio);
 
-        const botao = event.target; // Elemento exato que foi clicado
+                        }, 800);
 
-        if (botao.classList.contains("btn-devolver")){
-
-            if (botao.textContent === "Devolver"){
-
-                //altero o texto do botão
-                botao.textContent = "Devolvido";
-
-                //Subo e pego o container livro
-                const livro = botao.closest('.livro');
-
-                //Busco o botão "Reservado" dentro de livro
-                const btnLer = livro.querySelector('.btn-ler');
-
-                if (btnLer){
-                    btnLer.style.display = "none";
-                }
-
-                setTimeout(function(){
-                    if (btnLer){
-                        livro.style.display = "none";
                     }
-                }, 800);
-            }
-        }
-    });
+                });
+            });
 
-</script>
+        </script>
+
+        <script>
+
+            document.addEventListener("click", function (event) {
+
+                const botao = event.target; // Elemento exato que foi clicado
+
+                if (botao.classList.contains("btn-devolver")) {
+
+                    if (botao.textContent === "Devolver") {
+
+                        //altero o texto do botão
+                        botao.textContent = "Devolvido";
+
+                        //Subo e pego o container livro
+                        const livro = botao.closest('.livro');
+
+                        //Busco o botão "Reservado" dentro de livro
+                        const btnLer = livro.querySelector('.btn-ler');
+
+                        if (btnLer) {
+                            btnLer.style.display = "none";
+                        }
+
+                        setTimeout(function () {
+                            if (btnLer) {
+                                livro.style.display = "none";
+                            }
+                        }, 800);
+                    }
+                }
+            });
+
+        </script>
 
 </html>
