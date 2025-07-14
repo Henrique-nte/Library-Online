@@ -13,7 +13,7 @@ html {
 
 body {
     font-family: 'Cinzel', serif;
-    background-image: url(img/bg.jpg);
+    background-image: url(/img/background.jpg);
     background-size: cover;
     color: #fff;
     text-align: center;
