@@ -1,18 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@800&family=Roboto&display=swap');
 
+/* Reset e configuração base */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Cinzel', serif;
     background-image: url(img/bg.jpg);
+    background-size: cover;
     color: #fff;
     text-align: center;
 }
 
+/* Navbar */
+.navbar {
+    background-color: #022E41;
+    overflow: hidden;
+}
+
+.navbar-brand {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 35px 45px;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: 'Cinzel', serif;
+}
+
+.navbar-nav {
+    float: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    float: left;
+}
+
+.nav-link {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 35px 45px;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.nav-link:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Login Page */
 .title {
     font-size: 2.5rem;
     margin-top: 40px;
@@ -81,4 +130,176 @@ body {
     color: white;
     margin-top: 5px;
     text-decoration: none;
+}
+
+/* Conteúdo Principal */
+.conteudo {
+    padding: 10px 20px;
+}
+
+.titulo-home {
+    font-size: 60px;
+    margin-bottom: 50px;
+    letter-spacing: 3px;
+}
+
+.sessao {
+    margin-bottom: 50px;
+}
+
+.sessao h2 {
+    font-size: 40px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.grade,
+.grade-reservados {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 55px;
+}
+
+.livro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.livro:hover {
+    transform: scale(1.1);
+}
+
+.livro img,
+.vazio {
+    width: 240px;
+    height: 330px;
+    border: 2px solid #a3a3a3;
+    box-shadow: 0 0 15px #00000055;
+    border-radius: 12px;
+}
+
+.vazio {
+    background-image: url(img/nulo.png);
+    background-size: cover;
+}
+
+/* Botões Gerais */
+button {
+    margin-top: 8px;
+    padding: 5px 12px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    text-decoration: none;
+}
+
+.btn-ler {
+    background-color: none;
+}
+
+.btn-devolver {
+    background-color: #05597d;
+}
+
+.btn-reservar {
+    background-color: #022E41;
+    color: white;
+}
+
+.btn-ler:hover,
+.btn-reservar:hover {
+    background-color: #0680b4;
+}
+
+/* Botão Autor */
+.btn-autor {
+    background-color: #05597d;
+    color: white;
+    margin-top: 8px;
+    padding: 5px 12px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    text-decoration: none;
+}
+
+.btn-autor:hover {
+    background-color: #077daf;
+}
+
+/* Página do Autor */
+.autor-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#autor-imagem {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 0 25px #00000088;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+#autor-imagem:hover {
+    transform: scale(1.05);
+}
+
+.autor-info {
+    max-width: 800px;
+    background: #1b263b;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #00000055;
+    font-family: 'Roboto', sans-serif;
+}
+
+.autor-nome {
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px #fff3;
+}
+
+.autor-nacionalidade {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #a0c4ff;
+    font-style: italic;
+}
+
+.autor-bio {
+    font-size: 22px;
+    line-height: 1.8;
+    color: #dcdcdc;
+}
+
+/* Responsividade para página do autor */
+@media (max-width: 600px) {
+    #autor-imagem {
+        width: 200px;
+        height: 200px;
+    }
+
+    .autor-nome {
+        font-size: 2rem;
+    }
+
+    .autor-info {
+        padding: 20px;
+    }
 }
