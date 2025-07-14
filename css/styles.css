@@ -213,8 +213,15 @@ button {
 }
 
 .btn-ler:hover,
-.btn-reservar:hover {
+.btn-reservar:hover, 
+.btn-devolver:hover {
     background-color: #0680b4;
+}
+
+.btn-ler.disabled-hover:hover {
+    background-color: rgba(255, 255, 255, 0); /* Não muda a cor, mantém o padrão */
+    cursor: default;           /* Cursor padrão, não clicável */
+    pointer-events: none;      /* Opcional: desativa qualquer clique no hover */
 }
 
 /* Botão Autor */

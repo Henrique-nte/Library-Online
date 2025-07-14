@@ -53,7 +53,7 @@
 
                 <div class="livro">
                     <img src="/img/O sol é para todos.jpg" alt="O sol é para todos">
-                    <button class="btn-ler">Reservar</button>
+                    <button  class="btn-ler">Reservar</button>
                 </div>
 
                 <div class="livro">
@@ -87,10 +87,19 @@
             const bts = document.querySelectorAll('.btn-ler');
 
             bts.forEach(function (botao) {
+
+
+                //Concertar a lógica deste script
+                if (botao.classList.contains("disabled-hover")){
+                    botao.classList.remove('disabled-hover');
+                } else {
+                    botao.classList.add('disabled-hover');
+                };
+
                 botao.addEventListener("click", function () {
                     if (botao.textContent === "Reservar") {
                         botao.textContent = "Reservado";
-
+                        
                         //O .closest() olha pra cima
                         const livro = botao.closest('.livro');
 
@@ -116,6 +125,27 @@
                 });
             });
 
+        </script>
+
+
+
+        
+        <script>
+            //lógica para desabilitar o hover
+            window.addEventListener("load", function(){
+
+                const botoes = document.querySelectorAll(".btn-ler")
+
+                botoes.forEach(function(botao){
+                    if (botao.textContent === "Reservado"){
+                        //Css para destivar o hover
+                        botao.classList.add("disabled-hover");
+                        
+                    }
+
+                });
+
+            });
         </script>
 
         <script>
