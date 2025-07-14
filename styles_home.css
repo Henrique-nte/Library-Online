@@ -164,7 +164,7 @@ body {
     background-size: cover;
 }
 
-button, a {
+button {
     margin-top: 8px;
     padding: 5px 12px;
     font-size: 0.9rem;
@@ -190,4 +190,10 @@ button, a {
 }
 
 .btn-ler:hover,
-.btn-reservar:hover {}
+.btn-reservar:hover {
+    background-color: #0680b4;
+}
+
+a{
+    text-decoration: none;
+}
