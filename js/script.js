@@ -56,31 +56,31 @@ const autores = [
     {
         nome: "Machado de Assis",
         nacionalidade: "Brasileira",
-        Imagem: "img/machado.jpeg",
+        Imagem: "/img/Machado De Assis.jpeg",
         resumo: "Joaquim Maria Machado De Assis foi um escritor brasileiro amplamente conhecido pelos suas obras: 'Memórias Póstumas de Brás Cubas', 'Dom casmurro'."
     },
     {
         nome: "Clarice Lispector",
         nacionalidade: "Brasileira",
-        Imagem: "img/Clarice.jpg",
+        Imagem: "/img/Clarice Lispector.jpg",
         resumo: "Conhecida por uma escrita introspectiva e existencial, explorou os sentimentos e a identidade com profundidade psicológica."
     },
     {
         nome: "Carlos Drummond de Andrade",
         nacionalidade: "Brasileira",
-        Imagem: "img/Carlos.jpg",
+        Imagem: "/img/Carlos Drummond de Andrade.jpg",
         resumo: "Poeta modernista, abordou temas do cotidiano, da solidão e da condição humana com linguagem simples e reflexiva."
     },
     {
         nome: "Fernando Pessoa",
         nacionalidade: "Português",
-        Imagem: "img/Fernando Pessoa.jpg",
+        Imagem: "/img/Fernando Pessoa.jpg",
         resumo: "Criou múltiplos heterônimos para expressar diferentes visões de mundo; é um dos maiores nomes da literatura portuguesa."
     },
     {
         nome: "João Guimarães Rosa",
         nacionalidade: "Brasileira",
-        Imagem: "img/Guimaraes.jpg",
+        Imagem: "/img/João Guimarães Rosa.jpg",
         resumo: "Revolucionou a linguagem literária com vocabulário regional e neologismos; retratou o sertão com profundidade filosófica."
     }
 ];

@@ -57,24 +57,26 @@
                 </div>
 
                 <div class="livro">
-                    <img src="img/os misera.jpg" alt="Livro 1">
+                    <img src="/img/O morro dos ventos uivantes.jpg" alt="O morro dos ventos uivantes">
                     <button class="btn-ler">Reservar</button>
                 </div>
 
                 <div class="livro">
-                    <img src="img/dom.jpg" alt="Livro 2">
+                    <img src="/img/Os irmãos Karamázov.jpg" alt="Os irmãos Karamázov">
                     <button class="btn-ler">Reservar</button>
                 </div>
 
                 <div class="livro">
-                    <img src="img/crime.jpg" alt="Livro 3">
+                    <img src="/img/Dracula.jpg" alt="Dracula">
                     <button class="btn-ler">Reservar</button>
                 </div>
 
                 <div class="livro">
-                    <img src="img/irmaos.jpg" alt="Livro 3">
+                    <img src="/img/Crime e Castigo.jpg" alt="Crime e Castigo">
                     <button class="btn-ler">Reservar</button>
                 </div>
+
+                
 
             </div>
         </section>
@@ -107,13 +109,7 @@
                             livro.appendChild(botaoDevolver)
 
 
-                            //Adicionar a lógica para adiconar um campo de livro NULL
-                            const vazio = document.createElement("div");
-                            vazio.classList.add("vazio")
-
-                            const grade = document.querySelector('.grade')
-                            grade.appendChild(vazio);
-
+                    
                         }, 800);
 
                     }
@@ -144,7 +140,7 @@
                         if (btnLer) {
                             btnLer.style.display = "none";
                         }
-
+                        //Adicionar Lógica para devolver o livro para grade Destaques
                         setTimeout(function () {
                             if (btnLer) {
                                 livro.style.display = "none";
