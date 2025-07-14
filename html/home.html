@@ -135,17 +135,23 @@
                         const livro = botao.closest('.livro');
 
                         //Busco o botão "Reservado" dentro de livro
-                        const btnLer = livro.querySelector('.btn-ler');
-
-                        if (btnLer) {
-                            btnLer.style.display = "none";
-                        }
+                        const btnLer = livro.querySelector('.btn-ler');                        
+                        
                         //Adicionar Lógica para devolver o livro para grade Destaques
+                        const destino = document.querySelector('.grade');
+
                         setTimeout(function () {
-                            if (btnLer) {
-                                livro.style.display = "none";
+                            //Envio para destaques o livros
+                            destino.appendChild(livro)
+
+                            if (botao.textContent === "Devolvido"){
+                                botao.style.display = 'none';
                             }
                         }, 800);
+                        
+                        
+                        btnLer.textContent = "Reservar";
+
                     }
                 }
             });
