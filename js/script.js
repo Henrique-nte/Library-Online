@@ -49,6 +49,8 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 //  }, 4000); // tempo de espera antes de sumir
 //});
 
+/*VAMO TIMEE*/
+
 
 //Lógica da página de Autores
 
