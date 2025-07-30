@@ -83,75 +83,89 @@
 
         <script>
 
-            const bts = document.querySelectorAll('.btn-reservar');
+            //Envia para área de reservados
+            document.addEventListener("click", function (event) {
 
-            bts.forEach(function (botao) {
+                function enviarLivro(livro, destino) {
+                    setTimeout(function () {
+                        destino.appendChild(livro);
+                    }, 900);
+                }
+                function criarBotao() {
+                    let botaoDevolver = document.createElement("button");
+                    botaoDevolver.textContent = "Devolver";
+                    botaoDevolver.classList.add("btn-devolver");
 
-                botao.addEventListener("click", function () {
-                    if (botao.textContent === "Reservar") {
-                        botao.textContent = "Reservado";
+                    return botaoDevolver
+                }
+                function adicionarBotao(botao, destino) {
+                    setTimeout(function () {
+                        destino.appendChild(botao)
+                    }, 900)
+                }
+                function trocaClasse(elemento, antiga, nova, texto) {
+                    elemento.classList.remove(antiga);
+                    elemento.classList.add(nova);
+                    elemento.textContent = texto;
+                }
 
-                        //O .closest() olha pra cima
-                        const livro = botao.closest('.livro');
+                const botao = event.target;
 
-                        // Espera um pouquinho para o botão atualizar
-                        setTimeout(function () {
+                if (botao.textContent === "Reservar") {
+                    trocaClasse(botao, "btn-reservar", "btn-reservado", "Reservado");
 
-                            const destino = document.querySelector('.grade-reservados');
-                            destino.appendChild(livro); // move o elemento
+                    const livro = botao.closest(".livro");
+                    const destino = document.querySelector('.grade-reservados');
 
-                            //Cria e adiciona o botão devolver
-                            const botaoDevolver = document.createElement("button");
-                            botaoDevolver.textContent = "Devolver";
-                            botaoDevolver.classList.add("btn-devolver");
+                    enviarLivro(livro, destino);
 
-                            //Adiciono no livro o botao devolver
-                            livro.appendChild(botaoDevolver)
+                    const botaoDevolver = criarBotao()
+                    adicionarBotao(botaoDevolver, livro);
 
+                }
 
-
-                        }, 800);
-
-                    }
-                });
             });
 
         </script>
 
         <script>
 
+            //Lógica para devolver o livro: envia para grade
             document.addEventListener("click", function (event) {
 
-                const botao = event.target; // Elemento exato que foi clicado
+                const botao = event.target;
+
+                function trocaClasse(elemento, antiga, nova, texto) {
+                    elemento.classList.remove(antiga);
+                    elemento.classList.add(nova);
+                    elemento.textContent = texto;
+                }
+                function enviarLivro(botao, livro, destino, texto) {
+                    setTimeout(function () {
+                        //envio o livro para grade
+                        destino.appendChild(livro);
+
+                        //Troca de classe 
+                        const btnReservado = livro.querySelector(".btn-reservado");
+                        if (btnReservado) {
+                            trocaClasse(btnReservado, "btn-reservado", "btn-reservar", "Reservar");
+                        };
+
+                        //Oculto o botão 
+                        botao.classList.add("btn-ocultar");
+
+                    }, 900);
+                    botao.textContent = texto;
+                }
 
                 if (botao.classList.contains("btn-devolver")) {
-
                     if (botao.textContent === "Devolver") {
 
-                        //altero o texto do botão
-                        botao.textContent = "Devolvido";
+                        //Lógica para enviar
+                        const livro = botao.closest(".livro");
+                        const destino = document.querySelector(".grade");
 
-                        //Subo e pego o container livro
-                        const livro = botao.closest('.livro');
-
-                        //Busco o botão "Reservado" dentro de livro
-                        const btnLer = livro.querySelector('.btn-reservar');
-
-                        //Adicionar Lógica para devolver o livro para grade Destaques
-                        const destino = document.querySelector('.grade');
-
-                        setTimeout(function () {
-                            //Envio para destaques o livros
-                            destino.appendChild(livro)
-
-                            if (botao.textContent === "Devolvido") {
-                                botao.style.display = 'none';
-                            }
-                        }, 800);
-
-
-                        btnLer.textContent = "Reservar";
-
+                        enviarLivro(botao, livro, destino, "Devolvido");
                     }
                 }
             });

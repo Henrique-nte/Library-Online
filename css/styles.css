@@ -224,15 +224,11 @@ css dos botoes btn
     color: rgb(0, 0, 0);
 }
 
-/*Desativar o hover*/
-.btn-ler.disabled-hover:hover {
-    background-color: rgba(255, 255, 255, 0);
-    /* Não muda a cor, mantém o padrão */
-    cursor: default;
-    /* Cursor padrão, não clicável */
-    pointer-events: none;
-    /* Opcional: desativa qualquer clique no hover */
+/* Ocultar botão*/
+.btn-ocultar {
+    display: none;
 }
+
 
 /* Botão Autor */
 .btn-autor {

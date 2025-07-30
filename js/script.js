@@ -87,7 +87,7 @@ const autores = [
 
 // Espera o carregamento completo do HTML antes de executar o código
 document.addEventListener("DOMContentLoaded", function () {
-    
+
     // Pega os parâmetros da URL (exemplo: autores.html?nome=Machado%20de%20Assis)
     const params = new URLSearchParams(window.location.search);
 
@@ -116,7 +116,3 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.innerHTML = "<h2>Autor não encontrado</h2>";
     }
 });
-
-  
-
-  
