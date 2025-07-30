@@ -199,29 +199,39 @@ button {
     text-decoration: none;
 }
 
-.btn-ler {
-    background-color: none;
-}
-
-.btn-devolver {
-    background-color: #05597d;
-}
+/*
+css dos botoes btn
+*/
 
 .btn-reservar {
     background-color: #022E41;
     color: white;
 }
 
-.btn-ler:hover,
-.btn-reservar:hover, 
-.btn-devolver:hover {
-    background-color: #0680b4;
+.btn-reservado {
+    background-color: #022E41;
+    color: white;
 }
 
+.btn-devolver {
+    background-color: #8cddffc3;
+    color: rgb(0, 0, 0);
+}
+
+.btn-reservar:hover,
+.btn-devolver:hover {
+    background-color: #26beffc3;
+    color: rgb(0, 0, 0);
+}
+
+/*Desativar o hover*/
 .btn-ler.disabled-hover:hover {
-    background-color: rgba(255, 255, 255, 0); /* Não muda a cor, mantém o padrão */
-    cursor: default;           /* Cursor padrão, não clicável */
-    pointer-events: none;      /* Opcional: desativa qualquer clique no hover */
+    background-color: rgba(255, 255, 255, 0);
+    /* Não muda a cor, mantém o padrão */
+    cursor: default;
+    /* Cursor padrão, não clicável */
+    pointer-events: none;
+    /* Opcional: desativa qualquer clique no hover */
 }
 
 /* Botão Autor */

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
-    
+
     <title>Home</title>
 
 </head>
@@ -35,12 +35,12 @@
             <div class="grade-reservados">
                 <div class="livro">
                     <img src="/img/Os miseráveis.jpg" alt="Os miseráveis">
-                    <button class="btn-ler">Reservado</button>
+                    <button class="btn-reservado">Reservado</button>
                     <button class="btn-devolver">Devolver</button>
                 </div>
                 <div class="livro">
                     <img src="/img/Dom Casmurro.jpg" alt="Dom Casmurro">
-                    <button class="btn-ler">Reservado</button>
+                    <button class="btn-reservado">Reservado</button>
                     <button class="btn-devolver">Devolver</button>
                 </div>
 
@@ -53,53 +53,44 @@
 
                 <div class="livro">
                     <img src="/img/O sol é para todos.jpg" alt="O sol é para todos">
-                    <button  class="btn-ler">Reservar</button>
+                    <button class="btn-reservar">Reservar</button>
                 </div>
 
                 <div class="livro">
                     <img src="/img/O morro dos ventos uivantes.jpg" alt="O morro dos ventos uivantes">
-                    <button class="btn-ler">Reservar</button>
+                    <button class="btn-reservar">Reservar</button>
                 </div>
 
                 <div class="livro">
                     <img src="/img/Os irmãos Karamázov.jpg" alt="Os irmãos Karamázov">
-                    <button class="btn-ler">Reservar</button>
+                    <button class="btn-reservar">Reservar</button>
                 </div>
 
                 <div class="livro">
                     <img src="/img/Dracula.jpg" alt="Dracula">
-                    <button class="btn-ler">Reservar</button>
+                    <button class="btn-reservar">Reservar</button>
                 </div>
 
                 <div class="livro">
                     <img src="/img/Crime e Castigo.jpg" alt="Crime e Castigo">
-                    <button class="btn-ler">Reservar</button>
+                    <button class="btn-reservar">Reservar</button>
                 </div>
 
-                
+
 
             </div>
         </section>
 
         <script>
 
-
-            const bts = document.querySelectorAll('.btn-ler');
+            const bts = document.querySelectorAll('.btn-reservar');
 
             bts.forEach(function (botao) {
-
-
-                //Concertar a lógica deste script
-                if (botao.classList.contains("disabled-hover")){
-                    botao.classList.remove('disabled-hover');
-                } else {
-                    botao.classList.add('disabled-hover');
-                };
 
                 botao.addEventListener("click", function () {
                     if (botao.textContent === "Reservar") {
                         botao.textContent = "Reservado";
-                        
+
                         //O .closest() olha pra cima
                         const livro = botao.closest('.livro');
 
@@ -118,34 +109,13 @@
                             livro.appendChild(botaoDevolver)
 
 
-                    
+
                         }, 800);
 
                     }
                 });
             });
 
-        </script>
-
-
-
-        
-        <script>
-            //lógica para desabilitar o hover
-            window.addEventListener("load", function(){
-
-                const botoes = document.querySelectorAll(".btn-ler")
-
-                botoes.forEach(function(botao){
-                    if (botao.textContent === "Reservado"){
-                        //Css para destivar o hover
-                        botao.classList.add("disabled-hover");
-                        
-                    }
-
-                });
-
-            });
         </script>
 
         <script>
@@ -165,8 +135,8 @@
                         const livro = botao.closest('.livro');
 
                         //Busco o botão "Reservado" dentro de livro
-                        const btnLer = livro.querySelector('.btn-ler');                        
-                        
+                        const btnLer = livro.querySelector('.btn-reservar');
+
                         //Adicionar Lógica para devolver o livro para grade Destaques
                         const destino = document.querySelector('.grade');
 
@@ -174,12 +144,12 @@
                             //Envio para destaques o livros
                             destino.appendChild(livro)
 
-                            if (botao.textContent === "Devolvido"){
+                            if (botao.textContent === "Devolvido") {
                                 botao.style.display = 'none';
                             }
                         }, 800);
-                        
-                        
+
+
                         btnLer.textContent = "Reservar";
 
                     }
