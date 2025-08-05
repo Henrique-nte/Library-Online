@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,7 @@
 
 
 <body>
-    
+
     <nav class="navbar">
         <a href="#" class="navbar-brand">Library Online</a>
         <ul class="navbar-nav">
@@ -25,48 +26,49 @@
         <div class="grade">
             <div class="livro">
                 <img src="/img/autores/Machado de Assis.jpeg" alt="Machado De Assis">
-                <a href = "#" class="btn-autor" data-autor="Machado de Assis">Machado de Assis</a>
+                <a href="#" class="btn-autor" data-autor="Machado de Assis">Machado de Assis</a>
             </div>
             <div class="livro">
                 <img src="/img/autores/Clarice Lispector.jpg" alt="Clarice Lispector">
-                <a  href = "#" class="btn-autor"  data-autor="Clarice Lispector">Clarice Lispector</a>
+                <a href="#" class="btn-autor" data-autor="Clarice Lispector">Clarice Lispector</a>
             </div>
             <div class="livro">
                 <img src="/img/autores/Carlos Drummond de Andrade.jpg" alt="Carlos Drummond de Andrade">
-                <a  href = "#" class="btn-autor"  data-autor="Carlos Drummond de Andrade">Carlos Drummond de Andrade</a>
+                <a href="#" class="btn-autor" data-autor="Carlos Drummond de Andrade">Carlos Drummond de Andrade</a>
             </div>
-            
+
             <div class="livro">
                 <img src="/img/autores/Fernando Pessoa.jpg" alt="Fernando Pessoa">
-                <a href = "#" class="btn-autor"  data-autor="Fernando Pessoa">Fernando Pessoa</a>
+                <a href="#" class="btn-autor" data-autor="Fernando Pessoa">Fernando Pessoa</a>
             </div>
 
             <div class="livro">
 
                 <img src="/img/autores/João Guimarães Rosa.jpg" alt="João Guimarães Rosa">
-                <a href="#"  class="btn-autor" data-autor="João Guimarães Rosa">Guimarães Rosa</a>
+                <a href="#" class="btn-autor" data-autor="João Guimarães Rosa">Guimarães Rosa</a>
 
             </div>
 
         </div>
     </section>
 
-</main>
+    </main>
 
 </body>
 
 <script>
 
-//Redirecionamento do "a" 
-document.querySelectorAll('.btn-autor').forEach(botao => {
-botao.addEventListener("click", function (e) {
-    e.preventDefault();
-    const nome = botao.dataset.autor;
-    window.location.href = `autor.html?nome=${encodeURIComponent(nome)}`;
-});
-});
+    //Redirecionamento do "a" 
+    document.querySelectorAll('.btn-autor').forEach(botao => {
+        botao.addEventListener("click", function (e) {
+            e.preventDefault();
+            const nome = botao.dataset.autor;
+            window.location.href = `autor.html?nome=${encodeURIComponent(nome)}`;
+        });
+    });
 
 </script>
 
 </body>
+
 </html>
