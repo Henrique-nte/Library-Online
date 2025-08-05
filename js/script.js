@@ -84,6 +84,53 @@ const autores = [
     }
 ];
 
+const livros = [
+    {
+        autor: "Machado de Assis",
+        titulo: "Memórias Póstumas de Brás Cubas",
+        imagem: "/img/livros/Memórias Póstumas de Brás Cubas.jpg",
+    },
+    {
+        autor: "Machado de Assis",
+        titulo: "Dom Casmurro",
+        imagem: "/img/livros/Dom Casmurro.jpg",
+    },
+    {
+        autor: "Clarice Lispector",
+        titulo: "A hora da estrela",
+        imagem: "/img/livros/A hora da estrela.jpg",
+    },
+    {
+        autor: "J.R.R. Tolkien",
+        titulo: "A sociedade do Anel",
+        imagem: "/img/livros/A sociedade do Anel.jpg",
+    },
+    {
+        autor: "Fiódor Dostoiévski",
+        titulo: "Crime e Castigo",
+        imagem: "/img/livros/Crime e Castigo.jpg",
+    },
+    {
+        autor: "Bram Stoker",
+        titulo: "Drácula",
+        imagem: "/img/livros/Dracula.jpg",
+    },
+    {
+        autor: "Emily Brontë",
+        titulo: "O morro dos ventos uivantes",
+        imagem: "/img/livros/O morro dos ventos uivantes.jpg",
+    },
+    {
+        autor: "Fiódor Dostoiévski",
+        titulo: "Os irmãos Karamázov",
+        imagem: "/img/livros/Os irmãos Karamázov.jpg",
+    },
+    {
+        autor: "Victor Hugo",
+        titulo: "Os miseráveis",
+        imagem: "/img/livros/Os miseráveis.jpg",
+    },
+];
 
 // Espera o carregamento completo do HTML antes de executar o código
 document.addEventListener("DOMContentLoaded", function () {
@@ -111,8 +158,42 @@ document.addEventListener("DOMContentLoaded", function () {
         // Atualiza a imagem do autor na página
         document.getElementById("autor-imagem").src = autor.Imagem;
         document.getElementById("autor-imagem").alt = `Imagem de ${autor.nome}`;
+
+        //Lógica dos livros
+
+        // Agora: mostra as obras do autor
+        const livrosDoAutor = livros.filter(livro => livro.autor === nome);
+
+        const container = document.getElementById("livros-do-autor");
+        container.innerHTML = ""; // limpa se tiver algo
+
+        if (livrosDoAutor.length > 0) {
+            livrosDoAutor.forEach(livro => {
+                const livroDiv = document.createElement("div");
+                livroDiv.classList.add("livro-item"); // você pode estilizar isso no CSS
+
+                const img = document.createElement("img");
+                img.src = livro.imagem;
+                img.alt = livro.titulo;
+                //img.title = livro.titulo;
+
+
+                const titulo = document.createElement("p");
+                titulo.textContent = livro.titulo;
+
+                livroDiv.appendChild(img);
+                //livroDiv.appendChild(titulo);
+                container.appendChild(livroDiv);
+            });
+        } else {
+            container.textContent = "Nenhuma obra encontrada para este autor.";
+        }
+
+
     } else {
         // Se não encontrou, exibe mensagem de erro simples
         document.body.innerHTML = "<h2>Autor não encontrado</h2>";
     }
 });
+
+
