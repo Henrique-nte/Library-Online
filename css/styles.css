@@ -187,6 +187,27 @@ body {
     background-size: cover;
 }
 
+/*Css autores*/
+.autores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: tranform 0.3s ease;
+}
+
+.autores:hover {
+    transform: scale(1.1);
+}
+
+.autores img {
+    width: 240px;
+    height: 330px;
+    border: 2px solid #a3a3a3;
+    box-shadow: 0 0 15px #00000055;
+    border-radius: 12px;
+}
+
+
 /* Botões Gerais */
 button {
     margin-top: 8px;
