@@ -178,8 +178,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 //img.title = livro.titulo;
 
 
-                const titulo = document.createElement("p");
-                titulo.textContent = livro.titulo;
+                //const titulo = document.createElement("p");
+                //titulo.textContent = livro.titulo;
 
                 livroDiv.appendChild(img);
                 //livroDiv.appendChild(titulo);
