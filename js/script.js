@@ -130,6 +130,11 @@ const livros = [
         titulo: "Os miseráveis",
         imagem: "/img/livros/Os miseráveis.jpg",
     },
+    {
+        autor: "Fernando Pessoa",
+        titulo: "Livro do desassossego",
+        imagem: "/img/livros/Livro do desassossego.jpg",
+    },
 ];
 
 // Espera o carregamento completo do HTML antes de executar o código
@@ -160,17 +165,19 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("autor-imagem").alt = `Imagem de ${autor.nome}`;
 
         //Lógica dos livros
-
         // Agora: mostra as obras do autor
+
         const livrosDoAutor = livros.filter(livro => livro.autor === nome);
 
-        const container = document.getElementById("livros-do-autor");
+        const container = document.getElementById("grade-livros-autores");
+        console.log(container)
+
         container.innerHTML = ""; // limpa se tiver algo
 
         if (livrosDoAutor.length > 0) {
             livrosDoAutor.forEach(livro => {
                 const livroDiv = document.createElement("div");
-                livroDiv.classList.add("livro-item"); // você pode estilizar isso no CSS
+                livroDiv.classList.add("livro"); // você pode estilizar isso no CSS
 
                 const img = document.createElement("img");
                 img.src = livro.imagem;
