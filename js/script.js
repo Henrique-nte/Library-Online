@@ -58,6 +58,7 @@ const autores = [
         Imagem: "/img/autores/Machado De Assis.jpeg",
         resumo: "Joaquim Maria Machado De Assis foi um escritor brasileiro amplamente conhecido pelos suas obras: 'Memórias Póstumas de Brás Cubas', 'Dom casmurro'."
     },
+
     {
         nome: "Clarice Lispector",
         nacionalidade: "Brasileira",
@@ -69,6 +70,12 @@ const autores = [
         nacionalidade: "Brasileira",
         Imagem: "/img/autores/Carlos Drummond de Andrade.jpg",
         resumo: "Poeta modernista, abordou temas do cotidiano, da solidão e da condição humana com linguagem simples e reflexiva."
+    },
+    {
+        nome: "Fiódor Dostoiévski",
+        nacionalidade: "Russo",
+        Imagem: "/img/autores/Fiódor Dostoiévski.jpg",
+        resumo: "Foda."
     },
     {
         nome: "Fernando Pessoa",
