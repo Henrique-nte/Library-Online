@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const img = document.createElement("img");
                 img.src = livro.imagem;
                 img.alt = livro.titulo;
-                //img.title = livro.titulo;
+                img.title = livro.titulo;
 
 
                 //const titulo = document.createElement("p");
