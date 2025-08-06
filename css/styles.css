@@ -192,20 +192,34 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: tranform 0.3s ease;
+    gap: 1rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #01224b, #a8c1f4);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 .autores:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
 }
 
 .autores img {
     width: 240px;
     height: 330px;
-    border: 2px solid #a3a3a3;
-    box-shadow: 0 0 15px #00000055;
-    border-radius: 12px;
+    object-fit: cover;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease;
 }
+
+.autores:hover img {
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+}
+
 
 
 /* Botões Gerais */

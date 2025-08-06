@@ -135,6 +135,11 @@ const livros = [
         titulo: "Livro do desassossego",
         imagem: "/img/livros/Livro do desassossego.jpg",
     },
+    {
+        autor: "Carlos Drummond de Andrade",
+        titulo: "Alguma poesia",
+        imagem: "/img/livros/alguma poesia.jpg",
+    },
 ];
 
 // Espera o carregamento completo do HTML antes de executar o código
