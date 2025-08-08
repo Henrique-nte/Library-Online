@@ -1,8 +1,4 @@
 # Library-Online
 
-
-## Vou criar na pagina de autores uma logica aonde aparecerá obras especificas daquele autor
-
-## Adicionar um "contador" para a quantidade de livros diponívéis para reservar
-
-## Arrumar css dos livros dos autores
+## Adicionar um "contador" para a quantidade de livros diponívéis para reservar;
+## Se a quantidade for zero o usuario sera incapaz de reservar o livro senão poderá;
