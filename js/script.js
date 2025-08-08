@@ -32,23 +32,6 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     });
 });
 
-//JS DO PRELOADER
-
-// Quando todo o conteúdo da página (incluindo imagens, CSS, scripts) estiver completamente carregado...
-//window.addEventListener("load", function () {
-
-// Pegamos a <div> com id "preloader"
-//const preloader = document.getElementById("preloader");
-
-// Garante que o preloader esteja visível (opcional, caso queira controlar a opacidade)
-//preloader.style.opacity = "0.96";
-
-// Após 5 segundos (5000 milissegundos), o preloader é escondido da tela
-//setTimeout(() => {
-//    preloader.style.display = "none"; // remove visualmente o elemento
-//  }, 4000); // tempo de espera antes de sumir
-//});
-
 //Lógica da página de Autores
 
 const autores = [
