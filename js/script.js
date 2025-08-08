@@ -88,6 +88,12 @@ const autores = [
         nacionalidade: "Brasileira",
         Imagem: "/img/autores/João Guimarães Rosa.jpg",
         resumo: "Revolucionou a linguagem literária com vocabulário regional e neologismos; retratou o sertão com profundidade filosófica."
+    },
+    {
+        nome: "J.R.R Tolkien",
+        nacionalidade: "Britânico",
+        Imagem: "/img/autores/J.R.R Tolkien.jpg",
+        resumo: "Foda."
     }
 ];
 
@@ -108,9 +114,19 @@ const livros = [
         imagem: "/img/livros/A hora da estrela.jpg",
     },
     {
-        autor: "J.R.R. Tolkien",
+        autor: "J.R.R Tolkien",
         titulo: "A sociedade do Anel",
         imagem: "/img/livros/A sociedade do Anel.jpg",
+    },
+    {
+        autor: "J.R.R Tolkien",
+        titulo: "As duas torres",
+        imagem: "/img/livros/As duas torres.jpg",
+    },
+    {
+        autor: "J.R.R Tolkien",
+        titulo: "O retorno do rei",
+        imagem: "/img/livros/O retorno do rei.jpg",
     },
     {
         autor: "Fiódor Dostoiévski",
@@ -146,6 +162,11 @@ const livros = [
         autor: "Carlos Drummond de Andrade",
         titulo: "Alguma poesia",
         imagem: "/img/livros/alguma poesia.jpg",
+    },
+    {
+        autor: "João Guimarães Rosa",
+        titulo: "Grande sertão",
+        imagem: "/img/livros/Grande sertão.jpg",
     },
 ];
 
