@@ -94,6 +94,24 @@ const autores = [
         nacionalidade: "Britânico",
         Imagem: "/img/autores/J.R.R Tolkien.jpg",
         resumo: "Foda."
+    },
+    {
+        nome: "Bram Stoker",
+        nacionalidade: "Irlandês",
+        Imagem: "/img/autores/Bram stoker.jpg",
+        resumo: "Foda."
+    },
+    {
+        nome: "Emily Bronte",
+        nacionalidade: "Britânica",
+        Imagem: "/img/autores/Emily bronte.jpg",
+        resumo: "Foda."
+    },
+    {
+        nome: "Victor Hugo",
+        nacionalidade: "Francês",
+        Imagem: "/img/autores/Victor hugo.jpg",
+        resumo: "Foda."
     }
 ];
 
@@ -139,7 +157,7 @@ const livros = [
         imagem: "/img/livros/Dracula.jpg",
     },
     {
-        autor: "Emily Brontë",
+        autor: "Emily Bronte",
         titulo: "O morro dos ventos uivantes",
         imagem: "/img/livros/O morro dos ventos uivantes.jpg",
     },
