@@ -1,5 +1,8 @@
-//Lógica contador de livros disponíveis
-//Aqui consta para quando ele devolver o livro incrementar novamente
+//LÓGICA DO CONTADOR DE LIVRO DISPONÍVEIS
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+//AQUI CONSTA A LÓGICA PARA QUANDO ELE DEVOLVER O LIVRO INCREMENTAR + 1 AOS DISPONIVEIS
 document.addEventListener("click", function (event) {
 
     const botao = event.target;
@@ -27,7 +30,8 @@ document.addEventListener("click", function (event) {
     }
 
 });
-//Funções
+
+//FUNCÕES
 
 //FUNÇÃO QUE CAPTURA A QUANTIADE ATUAL DE LIVROS DISPONIVEIS
 function capturaQuantidadeAtual(button) {
@@ -42,6 +46,8 @@ function incrementar(button, quantidadeAtual) {
     const quantidade = quantidadeAtual + 1;
     return button.textContent = `DISPONIVEIS: ${quantidade}`;
 }
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
 //Aqui fica a logica que permite a decrementacao da quantidade de livros
 document.addEventListener("click", function (event) {
@@ -91,37 +97,10 @@ document.addEventListener("click", function (event) {
 
 });
 
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
-
-
-
-//Lógica para (Reservar)
+//LÓGICA PARA RESERVAR LIVRO
 document.addEventListener("click", function (event) {
-
-    function enviarLivro(livro, destino) {
-        setTimeout(function () {
-            destino.appendChild(livro);
-        }, 900);
-    }
-
-    function criarBotao() {
-        let botaoDevolver = document.createElement("button");
-        botaoDevolver.textContent = "Devolver";
-        botaoDevolver.classList.add("btn-devolver");
-        return botaoDevolver
-    }
-
-    function adicionarBotao(botao, destino) {
-        setTimeout(function () {
-            destino.appendChild(botao)
-        }, 900)
-    }
-
-    function trocaClasse(elemento, antiga, nova, texto) {
-        elemento.classList.remove(antiga);
-        elemento.classList.add(nova);
-        elemento.textContent = texto;
-    }
 
     const botao = event.target;
 
@@ -131,7 +110,7 @@ document.addEventListener("click", function (event) {
         const livro = botao.closest(".livro");
         const destino = document.querySelector('.grade-reservados');
 
-        enviarLivro(livro, destino);
+        enviarLivroReservar(livro, destino);
 
         const botaoDevolver = criarBotao()
         adicionarBotao(botaoDevolver, livro);
@@ -139,6 +118,40 @@ document.addEventListener("click", function (event) {
     }
 
 });
+
+//FUNÇÕES
+
+//ENVIA LIRVRO PARA O DESTINO
+function enviarLivroReservar(livro, destino) {
+    setTimeout(function () {
+        destino.appendChild(livro);
+    }, 900);
+}
+
+//CRIA O BOTAO BTN-DEVOLVER
+function criarBotao() {
+    let botaoDevolver = document.createElement("button");
+    botaoDevolver.textContent = "Devolver";
+    botaoDevolver.classList.add("btn-devolver");
+    return botaoDevolver
+}
+
+//ENVIA O BOTAO PARA O DESTINO
+function adicionarBotao(botao, destino) {
+    setTimeout(function () {
+        destino.appendChild(botao)
+    }, 900)
+}
+
+//FUNCAO PARA ALTERAR A CLASSE (JA ESTA DECLARADA NO FIM DO CODIGO)
+//function trocaClasse(elemento, antiga, nova, texto) {
+//elemento.classList.remove(antiga);
+//elemento.classList.add(nova);
+//elemento.textContent = texto;
+//}
+
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
 
 //LÓGICA PARA DEVOLVER O LIVRO
@@ -178,6 +191,7 @@ document.addEventListener("click", function (event) {
 //FUNÇÕES
 
 //FUNÇÃO QUE ALTERA A CLASSE DO ELEMENTO
+//USADA ATUALMENTE NO LISTENER DEVOLVER E RESERVAR
 function trocaClasse(elemento, antiga, nova, texto) {
     elemento.classList.remove(antiga);
     elemento.classList.add(nova);
