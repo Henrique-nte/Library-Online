@@ -54,12 +54,13 @@ document.addEventListener("click", function (event) {
 
     const botao = event.target;
 
-    function capturaQuantidadeAtual(button) {
-        let texto = button.textContent;
-        let partes = texto.split(":");
-        let quantidadeAtual = parseInt(partes[1]);
-        return quantidadeAtual;
-    }
+    //FUNÇÃO JA DECLARADA
+    //function capturaQuantidadeAtual(button) {
+    //let texto = button.textContent;
+    //let partes = texto.split(":");
+    //let quantidadeAtual = parseInt(partes[1]);
+    //return quantidadeAtual;
+    //}
 
     function decrementar(button, quantidadeAtual) {
         const quantidade = quantidadeAtual - 1;
