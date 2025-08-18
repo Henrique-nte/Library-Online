@@ -62,18 +62,6 @@ document.addEventListener("click", function (event) {
     //return quantidadeAtual;
     //}
 
-    function decrementar(button, quantidadeAtual) {
-        const quantidade = quantidadeAtual - 1;
-
-        if (quantidade <= 0) {
-            return button.textContent = "NÃO HÁ LIVROS";
-        }
-
-        return button.textContent = `DISPONIVEIS: ${quantidade}`;
-    }
-
-    //
-
     if (botao.textContent == "Reservar") {
 
         const livro = botao.closest(".livro");
@@ -97,6 +85,17 @@ document.addEventListener("click", function (event) {
     }
 
 });
+
+//FUNÇÃO DECREMENTAR
+function decrementar(button, quantidadeAtual) {
+    const quantidade = quantidadeAtual - 1;
+
+    if (quantidade <= 0) {
+        return button.textContent = "NÃO HÁ LIVROS";
+    }
+
+    return button.textContent = `DISPONIVEIS: ${quantidade}`;
+}
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 

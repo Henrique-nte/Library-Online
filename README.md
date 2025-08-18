@@ -1,4 +1,10 @@
 # Library-Online
 
-## Adicionar um "contador" para a quantidade de livros diponívéis para reservar;
-## Se a quantidade for zero o usuario sera incapaz de reservar o livro se não, poderá;
+## MELHORIAS
+
+## Unificar click listeners.
+## Usar classes ou data-attributes em vez de textContent.
+## Usar data-quantidade para controle de números.
+## Evitar criação duplicada de botões.
+## Considerar CSS para animações em vez de setTimeout.
+# Limpar código redundante e comentários antigos.
