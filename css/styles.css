@@ -262,9 +262,20 @@ css dos botoes btn
     display: none;
 }
 
+/*Css botao disponiveis*/
+.btn-disponiveis {
+    margin-top: 4px;
+    padding: 4px 12px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Cinzel', serif;
+    text-decoration: none;
+    background-color: #033f59;
+    color: white;
+}
 
 /*css livros dos autores*/
-
 
 /* Botão Autor */
 .btn-autor {
