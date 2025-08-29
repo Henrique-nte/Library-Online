@@ -5,11 +5,11 @@
 //AQUI CONSTA A LÓGICA PARA QUANDO ELE DEVOLVER O LIVRO INCREMENTAR + 1 AOS DISPONIVEIS
 document.addEventListener("click", function (event) {
 
-    const botao = event.target;
+    const botaoPrimeiro = event.target;
 
-    if (botao.textContent == "Devolver") {
+    if (botaoPrimeiro.textContent == "Devolver") {
 
-        const livro = botao.closest(".livro");
+        const livro = botaoPrimeiro.closest(".livro");
 
         if (!livro) return;
 
@@ -31,32 +31,16 @@ document.addEventListener("click", function (event) {
 
 });
 
-//FUNCÕES
-
-//FUNÇÃO QUE CAPTURA A QUANTIADE ATUAL DE LIVROS DISPONIVEIS
-function capturaQuantidadeAtual(button) {
-    let texto = button.textContent;
-    let partes = texto.split(":");
-    let quantidadeAtual = parseInt(partes[1]);
-    return quantidadeAtual;
-}
-
-//FUNÇÃO QUE INCREMENTA + 1 À QUANTIADE ATUAL DE LIVROS DISPONIVEIS
-function incrementar(button, quantidadeAtual) {
-    const quantidade = quantidadeAtual + 1;
-    return button.textContent = `DISPONIVEIS: ${quantidade}`;
-}
-
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
 //Aqui fica a logica que permite a decrementacao da quantidade de livros
 document.addEventListener("click", function (event) {
 
-    const botao = event.target;
+    const botaoSegundo = event.target;
 
-    if (botao.textContent == "Reservar") {
+    if (botaoSegundo.textContent == "Reservar") {
 
-        const livro = botao.closest(".livro");
+        const livro = botaoSegundo.closest(".livro");
 
         if (!livro) return;
 
@@ -78,6 +62,69 @@ document.addEventListener("click", function (event) {
 
 });
 
+
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+//LÓGICA PARA RESERVAR LIVRO
+document.addEventListener("click", function (event) {
+
+    const botaoTres = event.target;
+
+    if (botaoTres.textContent === "Reservar") {
+        trocaClasse(botaoTres, "btn-reservar", "btn-reservado", "Reservado");
+
+        const livro = botaoTres.closest(".livro");
+        const destino = document.querySelector('.grade-reservados');
+
+        enviarLivroReservar(livro, destino);
+
+        const botaoDevolver = criarbotao()
+        adicionarbotao(botaoDevolver, livro);
+
+    }
+
+});
+
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+
+//LÓGICA PARA DEVOLVER O LIVRO
+document.addEventListener("click", function (event) {
+
+    const botaoQuatro = event.target;
+
+    if (botaoQuatro.classList.contains("btn-devolver")) {
+        if (botaoQuatro.textContent === "Devolver") {
+
+            //Lógica para enviar
+            const livro = botaoQuatro.closest(".livro");
+            const destino = document.querySelector(".grade");
+
+            enviarLivro(botaoQuatro, livro, destino, "Devolvido");
+
+
+            //Linha adicional para mostrar na tela o botao disponiveis de volta
+            //closest sobe
+
+            const button = livro.querySelector(".btn-disponiveis");
+
+            if (!button) {
+                let botaoDisponiveis = criarbotaoDisponiveis();
+                enviarbotaoDisponiveis(botaoDisponiveis, livro);
+            }
+
+            setTimeout(function () {
+                button.style.display = "block";
+            }, 900);
+
+        }
+    }
+});
+
+
+
 //FUNÇÃO DECREMENTAR
 function decrementar(button, quantidadeAtual) {
     const quantidade = quantidadeAtual - 1;
@@ -89,27 +136,7 @@ function decrementar(button, quantidadeAtual) {
     return button.textContent = `DISPONIVEIS: ${quantidade}`;
 }
 
-//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
-//LÓGICA PARA RESERVAR LIVRO
-document.addEventListener("click", function (event) {
-
-    const botao = event.target;
-
-    if (botao.textContent === "Reservar") {
-        trocaClasse(botao, "btn-reservar", "btn-reservado", "Reservado");
-
-        const livro = botao.closest(".livro");
-        const destino = document.querySelector('.grade-reservados');
-
-        enviarLivroReservar(livro, destino);
-
-        const botaoDevolver = criarBotao()
-        adicionarBotao(botaoDevolver, livro);
-
-    }
-
-});
 
 //FUNÇÕES
 
@@ -120,64 +147,36 @@ function enviarLivroReservar(livro, destino) {
     }, 900);
 }
 
-//CRIA O BOTAO BTN-DEVOLVER
-function criarBotao() {
+//CRIA O botao BTN-DEVOLVER
+function criarbotao() {
     let botaoDevolver = document.createElement("button");
     botaoDevolver.textContent = "Devolver";
     botaoDevolver.classList.add("btn-devolver");
     return botaoDevolver
 }
 
-//ENVIA O BOTAO PARA O DESTINO
-function adicionarBotao(botao, destino) {
+//ENVIA O botao PARA O DESTINO
+function adicionarbotao(botao, destino) {
     setTimeout(function () {
         destino.appendChild(botao)
     }, 900)
 }
 
-//FUNCAO PARA ALTERAR A CLASSE (JA ESTA DECLARADA NO FIM DO CODIGO)
-//function trocaClasse(elemento, antiga, nova, texto) {
-//elemento.classList.remove(antiga);
-//elemento.classList.add(nova);
-//elemento.textContent = texto;
-//}
+//FUNCÕES
 
+//FUNÇÃO QUE CAPTURA A QUANTIADE ATUAL DE LIVROS DISPONIVEIS
+function capturaQuantidadeAtual(button) {
+    let texto = button.textContent;
+    let partes = texto.split(":");
+    let quantidadeAtual = parseInt(partes[1]);
+    return quantidadeAtual;
+}
 
-//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
-
-
-//LÓGICA PARA DEVOLVER O LIVRO
-document.addEventListener("click", function (event) {
-
-    const botao = event.target;
-
-    if (botao.classList.contains("btn-devolver")) {
-        if (botao.textContent === "Devolver") {
-
-            //Lógica para enviar
-            const livro = botao.closest(".livro");
-            const destino = document.querySelector(".grade");
-
-            enviarLivro(botao, livro, destino, "Devolvido");
-
-
-            //Linha adicional para mostrar na tela o botao disponiveis de volta
-            //closest sobe
-
-            const button = livro.querySelector(".btn-disponiveis");
-
-            if (!button) {
-                let botaoDisponiveis = criarBotaoDisponiveis();
-                enviarBotaoDisponiveis(botaoDisponiveis, livro);
-            }
-
-            setTimeout(function () {
-                button.style.display = "block";
-            }, 900);
-
-        }
-    }
-});
+//FUNÇÃO QUE INCREMENTA + 1 À QUANTIADE ATUAL DE LIVROS DISPONIVEIS
+function incrementar(button, quantidadeAtual) {
+    const quantidade = quantidadeAtual + 1;
+    return button.textContent = `DISPONIVEIS: ${quantidade}`;
+}
 
 
 //FUNÇÕES
@@ -210,7 +209,7 @@ function enviarLivro(botao, livro, destino, texto) {
 }
 
 //FUNÇÃO QUE CRIA UM BOTÃO (DISPONIVEIS)
-function criarBotaoDisponiveis() {
+function criarbotaoDisponiveis() {
     let botaoDisponiveis = document.createElement("button");
     botaoDisponiveis.textContent = "Disponiveis: 2";
     botaoDisponiveis.classList.add("btn-disponiveis");
@@ -218,8 +217,8 @@ function criarBotaoDisponiveis() {
     return botaoDisponiveis
 }
 
-//ENVIA O BOTAO (DISPONIVEIS)
-function enviarBotaoDisponiveis(botao, livro) {
+//ENVIA O botao (DISPONIVEIS)
+function enviarbotaoDisponiveis(botao, livro) {
     setTimeout(function () {
         //envio o botao para o livro
         livro.appendChild(botao);
