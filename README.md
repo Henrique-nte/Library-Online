@@ -11,3 +11,4 @@
 
 # Na pagina de login e cadastro adicionar uma logo entre no meio entre os titulos
 # Colocar icones nas páginas
+# Criar um listeneger para quando carregar a pagina dabilitar o funcionamento dos botoes escrito reservado

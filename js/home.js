@@ -1,15 +1,13 @@
-//LÓGICA DO CONTADOR DE LIVRO DISPONÍVEIS
-
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
 //AQUI CONSTA A LÓGICA PARA QUANDO ELE DEVOLVER O LIVRO INCREMENTAR + 1 AOS DISPONIVEIS
 document.addEventListener("click", function (event) {
 
-    const botaoPrimeiro = event.target;
+    const botao = event.target;
 
-    if (botaoPrimeiro.textContent == "Devolver") {
+    if (botao.textContent == "Devolver") {
 
-        const livro = botaoPrimeiro.closest(".livro");
+        const livro = botao.closest(".livro");
 
         if (!livro) return;
 
@@ -36,11 +34,11 @@ document.addEventListener("click", function (event) {
 //Aqui fica a logica que permite a decrementacao da quantidade de livros
 document.addEventListener("click", function (event) {
 
-    const botaoSegundo = event.target;
+    const botao = event.target;
 
-    if (botaoSegundo.textContent == "Reservar") {
+    if (botao.textContent == "Reservar") {
 
-        const livro = botaoSegundo.closest(".livro");
+        const livro = botao.closest(".livro");
 
         if (!livro) return;
 
@@ -69,12 +67,12 @@ document.addEventListener("click", function (event) {
 //LÓGICA PARA RESERVAR LIVRO
 document.addEventListener("click", function (event) {
 
-    const botaoTres = event.target;
+    const botao = event.target;
 
-    if (botaoTres.textContent === "Reservar") {
-        trocaClasse(botaoTres, "btn-reservar", "btn-reservado", "Reservado");
+    if (botao.textContent === "Reservar") {
+        trocaClasse(botao, "btn-reservar", "btn-reservado", "Reservado");
 
-        const livro = botaoTres.closest(".livro");
+        const livro = botao.closest(".livro");
         const destino = document.querySelector('.grade-reservados');
 
         enviarLivroReservar(livro, destino);
@@ -93,16 +91,16 @@ document.addEventListener("click", function (event) {
 //LÓGICA PARA DEVOLVER O LIVRO
 document.addEventListener("click", function (event) {
 
-    const botaoQuatro = event.target;
+    const botao = event.target;
 
-    if (botaoQuatro.classList.contains("btn-devolver")) {
-        if (botaoQuatro.textContent === "Devolver") {
+    if (botao.classList.contains("btn-devolver")) {
+        if (botao.textContent === "Devolver") {
 
             //Lógica para enviar
-            const livro = botaoQuatro.closest(".livro");
+            const livro = botao.closest(".livro");
             const destino = document.querySelector(".grade");
 
-            enviarLivro(botaoQuatro, livro, destino, "Devolvido");
+            enviarLivro(botao, livro, destino, "Devolvido");
 
 
             //Linha adicional para mostrar na tela o botao disponiveis de volta
