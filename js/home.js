@@ -1,10 +1,11 @@
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
-//AQUI CONSTA A LÓGICA PARA QUANDO ELE DEVOLVER O LIVRO INCREMENTAR + 1 AOS DISPONIVEIS
 document.addEventListener("click", function (event) {
 
+    //Lógica de decrementação e incrementação
     const botao = event.target;
 
+    //Aqui fica a logica que permite a decrementacao da quantidade de livros
     if (botao.textContent == "Devolver") {
 
         const livro = botao.closest(".livro");
@@ -27,16 +28,8 @@ document.addEventListener("click", function (event) {
 
     }
 
-});
-
-//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
-
-//Aqui fica a logica que permite a decrementacao da quantidade de livros
-document.addEventListener("click", function (event) {
-
-    const botao = event.target;
-
-    if (botao.textContent == "Reservar") {
+    //Aqui fica a logica que permite a decrementacao da quantidade de livros
+    else if (botao.textContent == "Reservar") {
 
         const livro = botao.closest(".livro");
 
@@ -59,8 +52,6 @@ document.addEventListener("click", function (event) {
     }
 
 });
-
-
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
