@@ -1,36 +1,13 @@
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
+//Lógica de decrementação e incrementação
 document.addEventListener("click", function (event) {
 
-    //Lógica de decrementação e incrementação
     const botao = event.target;
 
-    //Aqui fica a logica que permite a decrementacao da quantidade de livros
-    if (botao.textContent == "Devolver") {
+    if (botao.textContent == "Reservar") {
 
-        const livro = botao.closest(".livro");
-
-        if (!livro) return;
-
-        const button = livro.querySelector(".btn-disponiveis");
-
-        if (!button) return;
-
-        const atual = capturaQuantidadeAtual(button);
-
-        if (typeof atual === "number" && !isNaN(atual)) {
-            incrementar(button, atual);
-        }
-
-        setTimeout(function () {
-            button.style.display = "block";
-        }, 900);
-
-    }
-
-    //Aqui fica a logica que permite a decrementacao da quantidade de livros
-    else if (botao.textContent == "Reservar") {
-
+        //Aqui fica a logica que permite a decrementacao da quantidade de livros
         const livro = botao.closest(".livro");
 
         if (!livro) return;
@@ -49,70 +26,53 @@ document.addEventListener("click", function (event) {
             button.style.display = "none";
         }, 900);
 
-    }
+        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
-});
-
-//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
-
-//LÓGICA PARA RESERVAR LIVRO
-document.addEventListener("click", function (event) {
-
-    const botao = event.target;
-
-    if (botao.textContent === "Reservar") {
+        //LÓGICA PARA RESERVAR LIVRO
         trocaClasse(botao, "btn-reservar", "btn-reservado", "Reservado");
-
-        const livro = botao.closest(".livro");
         const destino = document.querySelector('.grade-reservados');
-
         enviarLivroReservar(livro, destino);
-
         const botaoDevolver = criarbotao()
         adicionarbotao(botaoDevolver, livro);
-
     }
 
-});
+    //Aqui fica a logica que permite a decrementacao da quantidade de livros
+    else if (botao.textContent == "Devolver") {
 
+        //Lógica para enviar
 
-//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+        const destino = document.querySelector(".grade");
+        const livro = botao.closest(".livro");
+        const button = livro.querySelector(".btn-disponiveis");
 
+        enviarLivro(botao, livro, destino, "Devolvido");
 
-//LÓGICA PARA DEVOLVER O LIVRO
-document.addEventListener("click", function (event) {
-
-    const botao = event.target;
-
-    if (botao.classList.contains("btn-devolver")) {
-        if (botao.textContent === "Devolver") {
-
-            //Lógica para enviar
-            const livro = botao.closest(".livro");
-            const destino = document.querySelector(".grade");
-
-            enviarLivro(botao, livro, destino, "Devolvido");
-
-
-            //Linha adicional para mostrar na tela o botao disponiveis de volta
-            //closest sobe
-
-            const button = livro.querySelector(".btn-disponiveis");
-
-            if (!button) {
-                let botaoDisponiveis = criarbotaoDisponiveis();
-                enviarbotaoDisponiveis(botaoDisponiveis, livro);
-            }
-
-            setTimeout(function () {
-                button.style.display = "block";
-            }, 900);
-
+        //Linha adicional para mostrar na tela o botao disponiveis de volta
+        if (!button) {
+            let botaoDisponiveis = criarbotaoDisponiveis();
+            enviarbotaoDisponiveis(botaoDisponiveis, livro);
         }
+
+        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+        if (!livro) return;
+
+        const atual = capturaQuantidadeAtual(button);
+
+        if (typeof atual === "number" && !isNaN(atual)) {
+            incrementar(button, atual);
+        }
+
+        setTimeout(function () {
+            button.style.display = "block";
+        }, 900);
+
     }
+
 });
 
 
+
+//FUNÇÕES
 
 //FUNÇÃO DECREMENTAR
 function decrementar(button, quantidadeAtual) {
@@ -124,10 +84,6 @@ function decrementar(button, quantidadeAtual) {
 
     return button.textContent = `DISPONIVEIS: ${quantidade}`;
 }
-
-
-
-//FUNÇÕES
 
 //ENVIA LIRVRO PARA O DESTINO
 function enviarLivroReservar(livro, destino) {
@@ -151,7 +107,6 @@ function adicionarbotao(botao, destino) {
     }, 900)
 }
 
-//FUNCÕES
 
 //FUNÇÃO QUE CAPTURA A QUANTIADE ATUAL DE LIVROS DISPONIVEIS
 function capturaQuantidadeAtual(button) {
@@ -166,9 +121,6 @@ function incrementar(button, quantidadeAtual) {
     const quantidade = quantidadeAtual + 1;
     return button.textContent = `DISPONIVEIS: ${quantidade}`;
 }
-
-
-//FUNÇÕES
 
 //FUNÇÃO QUE ALTERA A CLASSE DO ELEMENTO
 //USADA ATUALMENTE NO LISTENER DEVOLVER E RESERVAR
