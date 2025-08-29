@@ -5,7 +5,7 @@ document.addEventListener("click", function (event) {
 
     const botao = event.target;
 
-    if (botao.textContent == "Reservar") {
+    if (botao.classList.contains("btn-reservar")) {
 
         //Aqui fica a logica que permite a decrementacao da quantidade de livros
         const livro = botao.closest(".livro");
@@ -22,6 +22,7 @@ document.addEventListener("click", function (event) {
             decrementar(button, atual);
         }
 
+        //Mudar para css
         setTimeout(function () {
             button.style.display = "none";
         }, 900);
@@ -34,10 +35,11 @@ document.addEventListener("click", function (event) {
         enviarLivroReservar(livro, destino);
         const botaoDevolver = criarbotao()
         adicionarbotao(botaoDevolver, livro);
+
     }
 
     //Aqui fica a logica que permite a decrementacao da quantidade de livros
-    else if (botao.textContent == "Devolver") {
+    else if (botao.classList.contains("btn-devolver")) {
 
         //Lógica para enviar
 
@@ -69,8 +71,6 @@ document.addEventListener("click", function (event) {
     }
 
 });
-
-
 
 //FUNÇÕES
 
