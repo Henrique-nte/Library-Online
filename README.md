@@ -9,3 +9,4 @@
 
 # Na pagina de login e cadastro adicionar uma logo entre no meio entre os titulos
 # Colocar icones nas páginas
+# Atualizar os icones de email e senha
