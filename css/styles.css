@@ -62,17 +62,40 @@ body {
 }
 
 /* Login Page */
+
+/* index*/
 .title {
-    font-size: 2.5rem;
-    margin-top: 40px;
     text-shadow: 0 0 2px #fff;
+    text-align: center;
+    font-size: 3rem;
+    color: #2c3e50;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
+.icone-livros {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* Estilo da imagem da logo */
+.icone-livros img {
+    width: 500px;
+    height: auto;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+
+/* index*/
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: 30vh;
 }
 
 .login-box {
@@ -186,6 +209,18 @@ body {
     background-image: url(img/nulo.png);
     background-size: cover;
 }
+
+/*Icone do livros*/
+.icone-livros {
+    display: flex;
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+    height: 30vh;
+    /* Altura da tela inteira (opcional) */
+}
+
 
 /*Css autores*/
 .autores {
